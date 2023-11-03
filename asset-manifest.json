@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ReactUkit/static/css/main.07049068.css",
+    "main.js": "/ReactUkit/static/js/main.e305c853.js",
+    "index.html": "/ReactUkit/index.html",
+    "main.07049068.css.map": "/ReactUkit/static/css/main.07049068.css.map",
+    "main.e305c853.js.map": "/ReactUkit/static/js/main.e305c853.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07049068.css",
+    "static/js/main.e305c853.js"
+  ]
+}
