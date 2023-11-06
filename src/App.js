@@ -17,6 +17,7 @@ import Attrativeness from './components/attractiveness/attrativeness';
 import OffcanvasExample from './components/footer.jsx/footer';
 import Footer from './components/footer.jsx/footer';
 import Legend from './components/legendoGnutove/legend';
+import ModalTeachers from './components/modalTeachers';
 
 function App() {
     const [modal, setModal] = useState(false)

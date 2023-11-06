@@ -6,6 +6,7 @@
     right: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
 }
 
 .modal.active {
@@ -21,6 +22,7 @@
     min-width: 30vw;
     display: grid;
     grid-gap: 1vh;
+    
 }
 
 @media screen and (max-width: 900px) {
