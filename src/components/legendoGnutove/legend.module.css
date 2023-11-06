@@ -1,0 +1,36 @@
+.legendContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 10vh 5vw;
+    gap: 5vw;
+    justify-content: center;
+    align-items: center;
+}
+.legendImg {
+    width: 30vw;
+    height: 20vw;
+    justify-self: center;
+    border-radius: 2%;
+}
+
+.legend {
+    color: white;
+    font-size: 1.5vw;
+    justify-self: start;
+}
+
+@media screen and (max-width: 900px) {
+    .legend {
+        font-size: 2.5vw;
+    }
+    .legendImg {
+        width: 40vw;
+        height: 40vw;
+        justify-self: start;
+        border-radius: 2%;
+    }
+    .legendContainer {
+        margin: 4vh 3vw;
+        gap: 2vw;
+    }
+}

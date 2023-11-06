@@ -1,0 +1,30 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    padding: 25px;
+    background: rgb(70, 70, 70);
+    border-radius: 16px;
+    min-width: 30vw;
+    display: grid;
+    grid-gap: 1vh;
+}
+
+@media screen and (max-width: 900px) {
+    .modalContent {
+        min-width: 70vw;
+    }
+}

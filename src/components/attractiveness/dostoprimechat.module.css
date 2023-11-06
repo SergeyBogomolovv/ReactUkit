@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5vw;
+    margin: 4vh 2vw;
+}
+
+.img {
+    height: 20vw;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        margin: 2vh 3vw;
+        grid-gap: 3vw;
+    }
+    .img {
+        height: 40vw;
+    }
+
+}

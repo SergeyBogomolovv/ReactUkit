@@ -1,0 +1,68 @@
+.dirik {
+    width: 70%;
+    height: 70%;
+    grid-column-start: 2;
+    align-self: center; 
+    grid-row-start: 1;
+}
+
+.dirikQuestion {
+    color: #ffffff;
+    font-size: 1vw;
+    grid-column-start: 2;
+    align-self: end; 
+    grid-row-start: 1;
+}
+.dirikName {
+    color: #ffffff;
+    font-size: 1vw;
+    grid-column-start: 2;
+    align-self: start; 
+    grid-row-start: 1;
+}
+
+.WithCarouselContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 2vh 4vw;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 5vw;
+}
+
+.buttonsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10vw; 
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 2vw;
+}
+
+@media screen and (max-width: 900px) {
+    .buttonsContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 3vh; 
+        margin-right: 20vw;
+        margin-left: 20vw;
+        margin-top: 3vh;
+    }
+    .dirikQuestion {
+        display: none;
+    }
+    .dirikName {
+        color: #ffffff;
+        font-size: 2.5vw;
+        grid-column-start: 2;
+        align-self: start; 
+        grid-row-start: 1;
+    }
+    .dirik {
+        width: 85%;
+        height: 80%;
+        grid-column-start: 2;
+        align-self: end; 
+        grid-row-start: 1;
+    }
+}

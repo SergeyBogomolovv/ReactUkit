@@ -1,0 +1,70 @@
+.Container {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.Container.active {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContainerContent {
+    border-radius: 16px;
+    display: grid;
+}
+
+.listContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    color: white;
+    background-color: rgb(70, 70, 70);
+    width: 50vw;
+    height: 50vh;
+    border: 1px solid black;
+    align-items: center;
+    overflow: scroll;
+}
+
+.Person {
+    padding: 1vw;
+    background-color: rgb(70, 70, 70);
+    text-align: center;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1vw;
+}
+
+.listimage {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 15%;
+    float: right;
+}
+
+@media screen and (max-width: 900px) {
+    .listimage {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .listContainer {
+        display: grid;
+        grid-template-columns: 1fr;   
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .Person {
+        padding: 2vw;
+        font-size: 4vw;
+    }
+}
