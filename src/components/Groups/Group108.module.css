@@ -34,7 +34,7 @@
 }
 
 .Person {
-    padding: 4vw 4vh;
+    padding: 2vw 4vh;
     background-color: rgb(70, 70, 70);
     text-align: center;
     border: 2px solid black;
@@ -45,8 +45,8 @@
 }
 
 .listimage {
-    width: 7vw;
-    height: 7vw;
+    width: 10vw;
+    height: 10vw;
     border-radius: 15%;
     float: right;
 }
@@ -59,7 +59,7 @@
     border: 2px solid black;
     font-weight: 600;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 }
 

@@ -7,7 +7,7 @@ import cl from './Cards.module.css'
 export default function CardsContainer() {
   return (
     <div className={cl.cardContainer}>
-      <BasicExample title="./pngs/GNUTOV.png" name="Гнусный Гнутик" text="Страшный гнутов трахнул спрутов, а потом ебал верблюдов"/>
+      <BasicExample title="./pngs/GNUTOV.png" name="Гнусный Гнутик" text="Наглым образом назвал жизнь фруктовым садом"/>
       <BasicExample title="./pngs\GLUSI.png" name="Глускер Сметанович" text="Глускер с курочкой, БОЙСЯ ЕГО"/>
       <BasicExample title="./pngs\GULAMADZODICHI.png" name="Гуламадзодичи" text="Гуламадзодичи и его вонючие сородичи"/>
       {/* <BasicExample title="./pngs\Grekich.png" name="Вонючий Грекас" text="Девочка с юбкой и большими штанами с большими глазами с белыми ушами с короткими рукавами с длинными волосами и длинными сумками на лице с коротким хвостом"/>

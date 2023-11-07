@@ -1,13 +1,13 @@
 import Card from 'react-bootstrap/Card';
 import cl from './dostoprimechat.module.css'
 
-function AttrativeCard({src, text}) {
+function AttrativeCard({card}) {
   return (
       <Card bg='secondary' text='light'>
-        <Card.Img variant="top" src={src} className={cl.img}/>
+        <Card.Img variant="top" src={card.src} className={cl.img}/>
         <Card.Body>
           <Card.Text>
-            {text}
+            {card.text}
           </Card.Text>
         </Card.Body>
       </Card>
