@@ -29,7 +29,6 @@
     width: 100vw;
     height: 100vh;
     border: 1px solid black;
-    align-items: center;
     overflow: scroll;
 }
 
@@ -67,6 +66,12 @@
     justify-self: end;
 }
 
+.search {
+    padding: 0.5vw;
+    border-radius: 15px;
+    text-align: center;
+}
+
 @media screen and (max-width: 900px) {
     .listimage {
         width: 15vw;
@@ -75,7 +80,7 @@
 
     .listContainer {
         display: grid;
-        grid-template-columns: 1fr;   
+        grid-template-columns: 1fr;  
         width: 100vw;
         height: 100vh;
     }
@@ -88,4 +93,9 @@
     .title {
         padding: 2vw;
     }
+    .search {
+        padding: 1vw 0.1vw;
+        border-radius: 2vw;
+    }
+    
 }

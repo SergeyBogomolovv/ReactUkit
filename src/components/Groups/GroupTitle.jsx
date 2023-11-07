@@ -7,7 +7,7 @@ export default function GroupTitle({title, setVisible, searchPupil, callBack}) {
   return (
     <div className={cl.title}>
         Группа № {title}
-        <Form.Control type="text" className='' placeholder="Поиск по имени" value={searchPupil} onChange={callBack}/>
+        <input type="text" className={cl.search} placeholder="Поиск по имени" value={searchPupil} onChange={callBack}/>
         <CloseButton variant='white'className={cl.closeBtn} onClick={() => setVisible(false)}/>
     </div>
   )
