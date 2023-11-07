@@ -26,27 +26,27 @@
     grid-template-rows: 1fr 1fr 1fr;
     color: white;
     background-color: rgb(70, 70, 70);
-    width: 50vw;
-    height: 50vh;
+    width: 100vw;
+    height: 100vh;
     border: 1px solid black;
     align-items: center;
     overflow: scroll;
 }
 
 .Person {
-    padding: 1vw;
+    padding: 4vw 4vh;
     background-color: rgb(70, 70, 70);
     text-align: center;
-    border: 1px solid black;
+    border: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 1vw;
+    font-size: 1.5vw;
 }
 
 .listimage {
-    width: 4vw;
-    height: 4vw;
+    width: 7vw;
+    height: 7vw;
     border-radius: 15%;
     float: right;
 }
@@ -57,9 +57,14 @@
     grid-column-start: 1;
     grid-column-end: 4;
     border: 2px solid black;
-    border-bottom: 0;
-    text-align: center;
     font-weight: 600;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.closeBtn {
+    justify-self: end;
 }
 
 @media screen and (max-width: 900px) {
@@ -71,12 +76,16 @@
     .listContainer {
         display: grid;
         grid-template-columns: 1fr;   
-        width: 80vw;
-        height: 60vh;
+        width: 100vw;
+        height: 100vh;
     }
 
     .Person {
+        padding: 3vw;
+        font-size: 5vw;
+        border: 1px solid black;
+    }
+    .title {
         padding: 2vw;
-        font-size: 4vw;
     }
 }

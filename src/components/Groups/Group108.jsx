@@ -12,7 +12,7 @@ export default function Group108({visible, setVisible}) {
   return (
     <div className={rootClasses.join(' ')} onClick={() => setVisible(false)}>
       <div className={cl.ContainerContent} onClick={(e) => e.stopPropagation()}>
-      <List108/>
+      <List108 setVisible={setVisible}/>
       </div>
     </div>
   )

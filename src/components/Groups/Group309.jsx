@@ -12,7 +12,7 @@ export default function Group309({visible, setVisible}) {
   return (
     <div className={rootClasses.join(' ')} onClick={() => setVisible(false)}>
       <div className={cl.ContainerContent} onClick={(e) => e.stopPropagation()}>
-      <List309/>
+      <List309 setVisible={setVisible}/>
       </div>
     </div>
   )

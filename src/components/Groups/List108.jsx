@@ -1,12 +1,15 @@
 import ListGroup from 'react-bootstrap/ListGroup';
 import cl from './Group108.module.css'
 import ListPerson from './ListPerson';
-import { Button, Image } from 'react-bootstrap';
+import { Button, CloseButton, Image } from 'react-bootstrap';
 
-export default function List108() {
+export default function List108({setVisible}) {
   return (
     <>
-      <div className={cl.title}>Группа № 108</div>
+      <div className={cl.title}>
+        Группа № 108
+        <CloseButton variant='white'className={cl.closeBtn} onClick={() => setVisible(false)}/>
+        </div>
       <div className={cl.listContainer}>
         <ListPerson>Грекас <img src="./pngs\GLUSI.png" className={cl.listimage}/></ListPerson>
         <ListPerson>Вадим Метеличенко <img src="./pngs\GULAMADZODICHI.png" className={cl.listimage} /></ListPerson>
