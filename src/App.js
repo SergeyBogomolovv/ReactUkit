@@ -18,12 +18,14 @@ import OffcanvasExample from './components/footer.jsx/footer';
 import Footer from './components/footer.jsx/footer';
 import Legend from './components/legendoGnutove/legend';
 import ModalTeachers from './components/modalTeachers';
+import Teachers from './components/teachers/teachers';
 
 function App() {
     const [modal, setModal] = useState(false)
     const [group108, setGroup108] = useState(false)
     const [group306, setGroup306] = useState(false)
     const [group309, setGroup309] = useState(false)
+    const [teachers, setTeachers] = useState(false)
   
     return (
       <div>
@@ -32,7 +34,7 @@ function App() {
 
         <InfoButtons>
           <Button variant="secondary">Приказы о зачислении</Button>
-          <Button variant="secondary">Наши преподаватели</Button>
+          <Button variant="secondary" onClick={() => setTeachers(true)}>Наши преподаватели</Button>
           <Button variant="secondary" onClick={() => setModal(true)}>Список групп</Button></InfoButtons>
 
         <ModalGroups visible={modal} setVisible={setModal}>
@@ -56,6 +58,8 @@ function App() {
         <Group108 visible={group108} setVisible={setGroup108}/>
         <Group306 visible={group306} setVisible={setGroup306}/>
         <Group309 visible={group309} setVisible={setGroup309}/>
+        <Teachers visible={teachers} setVisible={setTeachers}/> 
+
         <Opisanie/>
         <Title>Три кита, на которых держиться наш колледж</Title>
         <CardsContainer/>
