@@ -10,24 +10,11 @@ export default function List306({setVisible}) {
     {id: 2, name: 'Вонючий', src: './pngs/TIMCHICK.png'},
     {id: 3, name: 'Геракс', src: './pngs/Grekich.png'}
   ])
-
-  const [sort, setSort] = useState('') //Аналог selectedSort
   const [searchPupil, setSearchPupil] = useState('') //Аналог searchQuery
 
-
-
-  const sortedPupils = useMemo(() => {
-    if(sort) {
-      return [...pupil306].sort((a,b) => a[setSort].localeCompare(b[setSort]))
-    }
-    return pupil306
-  }, [sort, pupil306]) 
-
-  const sortedAndSearchedPupils = useMemo(() => {
-    return sortedPupils.filter(post => post.name.toLowerCase().includes(searchPupil))
-  }, [searchPupil, sortedPupils])
-
-  
+  const SearchedPupils = useMemo(() => {
+    return pupil306.filter(post => post.name.toLowerCase().includes(searchPupil))
+  }, [searchPupil, pupil306])
 
   const callBack = e => setSearchPupil(e.target.value)
 
@@ -35,7 +22,7 @@ export default function List306({setVisible}) {
     <div>
       <GroupTitle title='306' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
       <div className={cl.listContainer}>
-      {sortedAndSearchedPupils.map(pupils =>
+      {SearchedPupils.map(pupils =>
           <ListPerson key={pupils.id} >{pupils.id}. {pupils.name} <img src={pupils.src} className={cl.listimage}/></ListPerson>
           )}
     

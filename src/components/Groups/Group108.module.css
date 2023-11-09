@@ -9,10 +9,17 @@
     z-index: 100;
 }
 
+.Navbar{
+    height: 7vh;
+}
 .Container.active {
     display: grid;
     justify-content: center;
     align-items: center;
+}
+
+.NavContainer {
+    grid-gap: 3vw;
 }
 
 .ContainerContent {
@@ -27,7 +34,7 @@
     color: white;
     background-color: #323641;
     width: 100vw;
-    height: 90vh;
+    height: 93vh;
     border: 1px solid black;
     overflow: scroll;
 }
@@ -63,7 +70,7 @@
 }
 
 .closeBtn {
-    justify-self: end;
+    align-self: center;
 }
 
 .search {
@@ -73,6 +80,9 @@
 }
 
 @media screen and (max-width: 900px) {
+    .Navbar{
+        height: auto;
+    }
     .listimage {
         width: 15vw;
         height: 15vw;
@@ -82,7 +92,7 @@
         display: grid;
         grid-template-columns: 1fr;  
         width: 100vw;
-        height: 92vh;
+        height: 100vh;
     }
 
     .Person {
@@ -97,5 +107,4 @@
         padding: 1vw 0.1vw;
         border-radius: 2vw;
     }
-    
 }

@@ -30,22 +30,11 @@ export default function List108({setVisible}) {
     {id: 20, name: 'Китин Матвей', src: './pngs/matvey.png'},
     
   ])
-
-  const [sort, setSort] = useState('') //Аналог selectedSort
   const [searchPupil, setSearchPupil] = useState('') //Аналог searchQuery
 
-
-
-  const sortedPupils = useMemo(() => {
-    if(sort) {
-      return [...pupil108].sort((a,b) => a[setSort].localeCompare(b[setSort]))
-    }
-    return pupil108
-  }, [sort, pupil108]) 
-
-  const sortedAndSearchedPupils = useMemo(() => {
-    return sortedPupils.filter(post => post.name.includes(searchPupil))
-  }, [searchPupil, sortedPupils])
+  const SearchedPupils = useMemo(() => {
+    return pupil108.filter(post => post.name.includes(searchPupil))
+  }, [searchPupil, pupil108])
 
   const callBack = e => setSearchPupil(e.target.value)
 
@@ -53,12 +42,10 @@ export default function List108({setVisible}) {
     <div>
       <GroupTitle title='108' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
       <div className={cl.listContainer}>
-
-      {sortedAndSearchedPupils.map(pupil =>
+      {SearchedPupils.map(pupil =>
           <ListPerson key={pupil.id}>{pupil.id}. {pupil.name} <img src={pupil.src} className={cl.listimage}/></ListPerson>
           )}
-    
-    </div>
+      </div>
   </div>
   )
 }
