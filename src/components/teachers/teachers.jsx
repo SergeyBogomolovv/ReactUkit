@@ -26,6 +26,8 @@ export default function Teachers({visible, setVisible}) {
         {name: "Подобин Валерий Алексеевич", img: "./pngs/teachers/podobin.png", subject: 'proger', description: "Че это тебя так колбасит? Подобие ТРЕУГОЛЬНИКО"},
         {name: "Мистер Прайс", img: "./pngs/teachers/price.png", subject: 'physiks', description: "Здравствуйте, мистер прайс"},
         {name: "Сабиржанова Екатерина Витальевна", img: "./pngs/teachers/sabir.png", subject: 'proger', description: "ПАНК"},
+        {name: "Глускер  Александр Игоревич", img: "./pngs/teachers/glusi.png", subject: 'proger', description: "ГЛУСКЕР СМЕТАНОВИЧ"},
+        {name: "Валеев Михаил Владимирович", img: "./pngs/teachers/valeev.png", subject: 'proger', description: "Ну да ты прав), так го пить! Ну многих смущает что я преподаватель"},
     ])
     
     const rootClasses = [cl.Container]
