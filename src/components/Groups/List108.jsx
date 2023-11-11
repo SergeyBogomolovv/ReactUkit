@@ -7,9 +7,9 @@ import GroupTitle from './GroupTitle';
 import { useMemo } from 'react';
 
 export default function List108({setVisible}) {
-  const [pupil108, setPupil108] = useState([
-    {id: 1, name: 'Грекас', src: './pngs/Grekich.png'},
-    {id: 2, name: 'Мария Уфаркина', src: './pngs/masha.png'},
+  const [pupil, setPupil] = useState([
+    {id: 1, name: 'Богомолов Сергей', src: './pngs/Grekich.png'},
+    {id: 2, name: 'Уфаркина Мария', src: './pngs/masha.png'},
     {id: 3, name: 'Гуламадзода Акмал', src: './pngs/GULAMADZODICH.png'},
     {id: 4, name: 'Парфенов Ярослав', src: './pngs/yarik.png'},
     {id: 5, name: 'Шарипова Амина', src: './pngs/amina.png'},
@@ -30,11 +30,11 @@ export default function List108({setVisible}) {
     {id: 20, name: 'Китин Матвей', src: './pngs/matvey.png'},
     
   ])
-  const [searchPupil, setSearchPupil] = useState('') //Аналог searchQuery
+  const [searchPupil, setSearchPupil] = useState('')
 
   const SearchedPupils = useMemo(() => {
-    return pupil108.filter(post => post.name.includes(searchPupil))
-  }, [searchPupil, pupil108])
+    return pupil.filter(post => post.name.includes(searchPupil))
+  }, [searchPupil, pupil])
 
   const callBack = e => setSearchPupil(e.target.value)
 

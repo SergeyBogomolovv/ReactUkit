@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import classes from './ModalGroups.module.css'
 import { Button } from 'react-bootstrap'
-import Group108 from '../Groups/Group108'
 
 export default function ModalGroups({children, visible, setVisible}) {  
 

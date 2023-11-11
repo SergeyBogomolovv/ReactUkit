@@ -6,7 +6,7 @@ function AttrativeCard({card}) {
       <Card bg='secondary' text='light'>
         <Card.Img variant="top" src={card.src} className={cl.img}/>
         <Card.Body>
-          <Card.Text>
+          <Card.Text className={cl.text}>
             {card.text}
           </Card.Text>
         </Card.Body>

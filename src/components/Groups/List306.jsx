@@ -5,7 +5,7 @@ import { CloseButton, Form } from 'react-bootstrap'
 import GroupTitle from './GroupTitle'
 
 export default function List306({setVisible}) {
-  const [pupil306, setPupil306] = useState([
+  const [pupil, setPupil] = useState([
     {id: 1, name: 'Тимчик', src: './pngs/TIMCHICK.png'},
     {id: 2, name: 'Вонючий', src: './pngs/TIMCHICK.png'},
     {id: 3, name: 'Геракс', src: './pngs/Grekich.png'}
@@ -13,8 +13,8 @@ export default function List306({setVisible}) {
   const [searchPupil, setSearchPupil] = useState('') //Аналог searchQuery
 
   const SearchedPupils = useMemo(() => {
-    return pupil306.filter(post => post.name.toLowerCase().includes(searchPupil))
-  }, [searchPupil, pupil306])
+    return pupil.filter(post => post.name.toLowerCase().includes(searchPupil))
+  }, [searchPupil, pupil])
 
   const callBack = e => setSearchPupil(e.target.value)
 

@@ -18,5 +18,7 @@
     .img {
         height: 40vw;
     }
-
+    .text { 
+        font-size: 3vw;
+    }
 }

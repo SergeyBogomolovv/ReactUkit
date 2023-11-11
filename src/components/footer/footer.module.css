@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    padding: 15px;
+    color: white;
+    background-color: #212529;
+    top: 0;
+    gap: 2vw;
+    justify-content: center;
+}
+.txt {
+    font-size: 1.4vw;
+    font-weight: 600;
+    align-self: center;
+}
+.img {
+    width: 4vw;
+    height: 4vw;
+}
+
+@media screen and (max-width: 900px){
+    .txt {
+        font-size: 3.5vw;
+    }
+    .img {
+        width: 10vw;
+        height: 10vw;
+    }
+    .container {
+        padding: 3vw;
+        gap: 3vw;
+    }
+}

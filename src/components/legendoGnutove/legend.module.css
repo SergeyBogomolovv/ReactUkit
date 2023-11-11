@@ -21,17 +21,21 @@
 
 @media screen and (max-width: 900px) {
     .legend {
-        font-size: 2.5vw;
+        font-size: 3.5vw;
+        grid-row: 1;
+        width: 90vw;
+        justify-self: center;
     }
     .legendImg {
-        width: 40vw;
-        height: 40vw;
-        justify-self: start;
+        width: 90vw;
+        height: auto;
+        justify-self: center;
         border-radius: 2%;
+        grid-row: 2;
     }
     .legendContainer {
         margin: 4vh 3vw;
         gap: 5vw;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr;
     }
 }
