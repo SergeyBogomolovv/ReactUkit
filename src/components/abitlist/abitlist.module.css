@@ -1,0 +1,52 @@
+.Container {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #323641;
+    z-index: 100;
+}
+
+.Container.active {
+    display: grid;
+}
+
+.contentContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    color: white;
+    background-color: #323641;
+    width: 100vw;
+    height: 93vh;
+    overflow: scroll;
+    gap: 1vw;
+}
+
+.Navbar{
+    height: auto;
+}
+
+.NavContainer {
+    grid-gap: 3vw;
+}
+
+.closeBtn {
+    align-self: center;
+}
+
+@media screen and (max-width: 900px) {
+    .Navbar{
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .contentContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 90vh;
+        grid-gap: 1vw;
+        margin: 0;
+    }
+}

@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function Header() {
+function Header({setVisible}) {
   return (
       <Navbar expand="lg" variant='dark' bg='dark'>
         <Container>
@@ -13,7 +13,7 @@ function Header() {
             <Nav className="me-auto">
               <Nav.Link href="https://www.mgkit.ru/">Официальный сайт</Nav.Link>
               <Nav.Link href="https://vk.com/s.bogomolov0">Кто делал</Nav.Link>
-              <Nav.Link href="https://vk.com/s.bogomolov0">Профиль</Nav.Link>
+              <Nav.Link onClick={() => setVisible(true)}>Список поступающих</Nav.Link>
               <NavDropdown title="Отделения" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Отделение 1</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

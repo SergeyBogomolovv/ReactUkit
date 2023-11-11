@@ -9,7 +9,6 @@ import Opisanie from './components/Opisanie/Opisanie';
 import InfoButtons from './components/Main/InfoButtons';
 import ModalGroups from './components/ModalGroups/ModalGroups';
 import Title from './components/Cards/Title';
-import ImageAndTextExample from './components/attractiveness/attractiveCard';
 import Attrativeness from './components/attractiveness/attrativeness';
 import Legend from './components/legendoGnutove/legend';
 import Teachers from './components/teachers/teachers';
@@ -19,18 +18,21 @@ import List306 from './components/Groups/List306';
 import Group from './components/Groups/Group';
 import Footer from './components/footer/footer';
 import Documents from './components/documents/documents';
+import Abitlist from './components/abitlist/abitlist';
 
 function App() {
+    const [abiturients, setAbiturients] = useState([])
     const [modalGroups, setModalGroups] = useState(false)
     const [group108, setGroup108] = useState(false)
     const [group306, setGroup306] = useState(false)
     const [group309, setGroup309] = useState(false)
     const [teachers, setTeachers] = useState(false)
     const [modalDocs, setModalDocs] = useState(false)
+    const [modalAbits, setModalAbits] = useState(false)
   
     return (
       <div>
-        <Header/>
+        <Header setVisible={setModalAbits}/>
         <WithCarousel/>
 
         <InfoButtons>
@@ -62,7 +64,8 @@ function App() {
         <Group visible={group306}><List306 setVisible={setGroup306}/></Group>
         <Group visible={group309}><List309 setVisible={setGroup309}/></Group>
         <Teachers visible={teachers} setVisible={setTeachers}/> 
-        <Documents visible={modalDocs} setVisible={setModalDocs}/>
+        <Documents visible={modalDocs} setVisible={setModalDocs} abiturients={abiturients} setAbiturients={setAbiturients}/>
+        <Abitlist visible={modalAbits} setVisible={setModalAbits} abiturients={abiturients}/>
 
         <Opisanie/>
         <Title>Три кита, на которых держиться наш колледж:</Title>

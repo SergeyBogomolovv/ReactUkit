@@ -3,18 +3,37 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import cl from './documents.module.css'
+import { useRef, useState } from 'react';
 
-function Documents({visible, setVisible}) {
+function Documents({visible, setVisible, abiturients, setAbiturients}) {
+
     const rootClasses = [cl.Container]
     if(visible === true) {
         rootClasses.push(cl.active)
     }
+
+    const [nameValue, setNameValue] = useState('')
+    const [mailValue, setMailValue] = useState('')
+    const [ballValue, setBallValue] = useState('')
+    const [inputValue, setInputValue] = useState('')
+
+    const send = () => {
+      setAbiturients([...abiturients, {name: nameValue, email: mailValue, ball: ballValue, input: inputValue}])
+      setNameValue('')
+      setMailValue('')
+      setBallValue('')
+      setInputValue('')
+      setVisible(false)
+    }
+
+    const close = () => {
+      setVisible(false)
+      console.log(abiturients)
+    }
+
   return (
-    <div
-      className="modal show"
-      style={{ display: 'block', position: 'initial' }}
-    >
-      <Modal.Dialog className={rootClasses} variant='dark' bg='dark'>
+    <div className={rootClasses.join(' ')}>
+      <Modal.Dialog >
         <Modal.Header >
           <Modal.Title>Подать документы</Modal.Title>
         </Modal.Header>
@@ -27,6 +46,9 @@ function Documents({visible, setVisible}) {
           placeholder="Фамилия Имя Отчество"
           aria-label="Username"
           aria-describedby="basic-addon1"
+          value={nameValue}
+          onChange={e => setNameValue(e.target.value)}
+          
         />
       </InputGroup>
 
@@ -35,37 +57,32 @@ function Documents({visible, setVisible}) {
           placeholder="Электронная почта"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
+          value={mailValue}
+          onChange={e => setMailValue(e.target.value)}
+      
         />
         <InputGroup.Text id="basic-addon2">@gmail.com</InputGroup.Text>
       </InputGroup>
 
-      <Form.Label htmlFor="basic-url">Your vanity URL</Form.Label>
       <InputGroup className="mb-3">
-        <InputGroup.Text id="basic-addon3">
-          https://example.com/users/
-        </InputGroup.Text>
-        <Form.Control id="basic-url" aria-describedby="basic-addon3" />
+        <InputGroup.Text>Ваш средний балл</InputGroup.Text>
+        <Form.Control placeholder='0.00' value={ballValue} onChange={e => setBallValue(e.target.value)}/>
       </InputGroup>
 
       <InputGroup className="mb-3">
-        <InputGroup.Text>$</InputGroup.Text>
-        <Form.Control aria-label="Amount (to the nearest dollar)" />
-        <InputGroup.Text>.00</InputGroup.Text>
-      </InputGroup>
-
-      <InputGroup>
         <InputGroup.Text>Почемы мы должны вас взять</InputGroup.Text>
-        <Form.Control as="textarea" aria-label="With textarea" />
+        <Form.Control as="textarea" value={inputValue} onChange={e => setInputValue(e.target.value)} />
       </InputGroup>
     </>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setVisible(false)}>Закрыть</Button>
-          <Button variant="primary" onClick={() => setVisible(false)}>Отправить</Button>
+        <Button variant="secondary" onClick={close}>Закрыть</Button>
+          <Button variant="primary" onClick={send}>Отправить</Button>
         </Modal.Footer>
       </Modal.Dialog>
-    </div>
+   </div>
+      
   );
 }
 
