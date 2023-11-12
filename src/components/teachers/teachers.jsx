@@ -55,7 +55,7 @@ export default function Teachers({visible, setVisible}) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className={[cl.NavContainer, 'me-auto'].join(' ')}>
-                <Form.Control type="text"  placeholder="Поиск по имени" value={searchTeacher} onChange={e => setSearchTeacher(e.target.value)}/>
+                <Form.Control type="text"  placeholder="Поиск по имени" value={searchTeacher} onChange={e => setSearchTeacher(e.target.value)} />
                     <TeachersSelect options={[
                         {value: '', name: 'Все предметы'},
                         {value: 'PE', name: 'Физкультура'},
@@ -68,7 +68,7 @@ export default function Teachers({visible, setVisible}) {
                         {value: 'biology', name: 'Биология'}, 
                         {value: 'proger', name: 'Программирование'},
                         {value: 'physiks', name: 'Физика'},
-                        ]} value={chooseSubject} onChange={sort => setChooseSubject(sort)}/> 
+                        ]} value={chooseSubject} onChange={sort => setChooseSubject(sort)} /> 
                     <CloseButton variant='white' onClick={() => setVisible(false)} className={cl.closeBtn}/>
                 </Nav>
                 </Navbar.Collapse>

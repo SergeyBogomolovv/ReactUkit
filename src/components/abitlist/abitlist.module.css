@@ -1,28 +1,26 @@
 .Container {
     display: none;
     position: fixed;
-    top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background: #323641;
     z-index: 100;
 }
 
 .Container.active {
-    display: grid;
+    display: block;
+    background-color: #323641;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
 }
 
 .contentContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    color: white;
-    background-color: #323641;
-    width: 100vw;
-    height: 93vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2vh 1vw;
+    grid-gap: 2vw;
     overflow: scroll;
-    gap: 1vw;
 }
 
 .Navbar{
@@ -45,8 +43,7 @@
     .contentContainer {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        height: 90vh;
-        grid-gap: 1vw;
-        margin: 0;
+        margin: 1vh 2vw;
+        grid-gap: 3vw;
     }
 }

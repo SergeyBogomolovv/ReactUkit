@@ -14,7 +14,7 @@ function Header({setVisible}) {
               <Nav.Link href="https://www.mgkit.ru/">Официальный сайт</Nav.Link>
               <Nav.Link href="https://vk.com/s.bogomolov0">Кто делал</Nav.Link>
               <Nav.Link onClick={() => setVisible(true)}>Список поступающих</Nav.Link>
-              <NavDropdown title="Отделения" id="basic-nav-dropdown">
+              <NavDropdown title="Отделения" id="dark-nav-dropdown" data-bs-theme="dark">
                 <NavDropdown.Item href="#action/3.1">Отделение 1</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                 Отделение 2

@@ -49,4 +49,8 @@
         margin-top: 5vh;
         margin-bottom: 0.5vh;
     }
+    .cardIMG {
+    width: auto;
+    height: 75%;
+}
 }

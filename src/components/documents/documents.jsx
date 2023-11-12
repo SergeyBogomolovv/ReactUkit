@@ -33,19 +33,19 @@ function Documents({visible, setVisible, abiturients, setAbiturients}) {
 
   return (
     <div className={rootClasses.join(' ')}>
-      <Modal.Dialog >
-        <Modal.Header >
+      <Modal.Dialog>
+        <Modal.Header>
           <Modal.Title>Подать документы</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body >
+        <Modal.Body data-bs-theme="dark">
         <>
-      <InputGroup className="mb-3">
+      <InputGroup className="mb-3" >
         <InputGroup.Text id="basic-addon1">ФИО:</InputGroup.Text>
         <Form.Control
           placeholder="Фамилия Имя Отчество"
           aria-label="Username"
-          aria-describedby="basic-addon1"
+          aria-describedby="dark-addon1"
           value={nameValue}
           onChange={e => setNameValue(e.target.value)}
           
@@ -59,7 +59,6 @@ function Documents({visible, setVisible, abiturients, setAbiturients}) {
           aria-describedby="basic-addon2"
           value={mailValue}
           onChange={e => setMailValue(e.target.value)}
-      
         />
         <InputGroup.Text id="basic-addon2">@gmail.com</InputGroup.Text>
       </InputGroup>
@@ -70,8 +69,7 @@ function Documents({visible, setVisible, abiturients, setAbiturients}) {
       </InputGroup>
 
       <InputGroup className="mb-3">
-        <InputGroup.Text>Почемы мы должны вас взять</InputGroup.Text>
-        <Form.Control as="textarea" value={inputValue} onChange={e => setInputValue(e.target.value)} />
+        <Form.Control as="textarea" value={inputValue} onChange={e => setInputValue(e.target.value)} placeholder='Почему мы должны вас взять'/>
       </InputGroup>
     </>
         </Modal.Body>
