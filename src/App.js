@@ -34,6 +34,7 @@ function App() {
       <div>
         <Header setVisible={setModalAbits}/>
         <WithCarousel/>
+        <hr className='hr'></hr>
 
         <InfoButtons>
           <Button variant="secondary" onClick={() => setModalDocs(true)}>Подать документы</Button>

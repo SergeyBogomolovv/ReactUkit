@@ -8,3 +8,14 @@ body {
     background-color: #323641;
 }
 
+.hr {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .hr {
+        display: block;
+        color: #fff;
+        border: 1px solid white;
+    }
+}

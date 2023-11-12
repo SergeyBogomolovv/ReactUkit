@@ -9,7 +9,7 @@ export default function Abit({abit, index}) {
         <Card.Body>
           <Card.Title className={cl.CardTitle}>{abit.name}</Card.Title>
           <Card.Text className={cl.CardText}>Средний балл: {abit.ball}</Card.Text>
-          <Card.Text>Место: {index}</Card.Text>
+          <Card.Text className={cl.CardTitle}>Место: {index}</Card.Text>
           <Card.Text className={cl.CardText}>
             Почему должны взять: {abit.input}
           </Card.Text>

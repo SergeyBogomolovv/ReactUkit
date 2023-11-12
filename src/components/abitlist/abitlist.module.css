@@ -35,6 +35,10 @@
     align-self: center;
 }
 
+.CardTitle {
+    font-weight: 600;
+}
+
 @media screen and (max-width: 900px) {
     .Navbar{
         grid-column-start: 1;
