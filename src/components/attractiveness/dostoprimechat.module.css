@@ -11,14 +11,15 @@
 
 @media screen and (max-width: 900px) {
     .container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr ;
         margin: 2vh 3vw;
         grid-gap: 3vw;
     }
     .img {
-        height: 40vw;
+        height: auto;
+        max-height: 450px;
     }
     .text { 
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 }

@@ -4,6 +4,7 @@
     grid-column-start: 2;
     align-self: center; 
     grid-row-start: 1;
+    border-radius: 15%;
 }
 
 .dirikQuestion {
@@ -50,11 +51,12 @@
     }
     .dirikQuestion {
         color: #ffffff;
-        font-size: 5vw;
+        font-size: 4vw;
         grid-column: 2;
         justify-self: center; 
         align-self: center;
         grid-row: 3;
+        text-align: center;
     }
     .dirikName {
         grid-column-start: 1;
@@ -66,8 +68,8 @@
     .dirik {
         grid-row: 3;
         grid-column: 1;
-        width: 15vh;
-        height: 15vh;
+        width: 80%;
+        height: 90%;
         align-self: center;
         justify-self: center;
     }
@@ -80,7 +82,7 @@
     .WithCarouselContainer {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3fr 0.5fr 2fr;
+        grid-template-rows: 4fr 0.5fr 3fr;
         margin: 2vh 4vw;
         align-items: center;
         justify-items: center;
