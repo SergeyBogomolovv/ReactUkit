@@ -71,7 +71,7 @@ function App() {
         <Title>Три кита, на которых держиться наш колледж:</Title>
         <CardsContainer/>
         <Legend/>
-        <Title>Наши достопримечательности: </Title>
+        <Title>Наши отличившиеся преподы: </Title>
         <Attrativeness/>
         <Footer/>
       </div>
