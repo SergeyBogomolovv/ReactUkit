@@ -8,7 +8,7 @@ export default function WithCarousel() {
     <div className={cl.WithCarouselContainer}>
         {window.innerWidth < 900
           ? <Image src="./pngs\photo_2023-10-29_12-15-35.jpg" rounded  className={cl.Image}/>
-          : <Carousel1/> 
+          : <Carousel1 clName={cl.Carousel}/> 
         }        
         <Image src="./pngs/img_0089.jpg" className={cl.dirik}/>
         <div className={cl.dirikName}>Директор Колледжа:</div>

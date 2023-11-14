@@ -11,4 +11,21 @@
 .Container.active {
     display: grid;
     align-items: center;
+    animation: showCard 0.5s forwards;
+}
+@keyframes showCard {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes closeCard {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }

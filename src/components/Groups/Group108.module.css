@@ -14,22 +14,22 @@
     grid-column-end: 4;
 }
 .Container.active {
-    display: grid;
+    display: block;
+    background-color: #323641;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
 }
 
 .NavContainer {
     grid-gap: 3vw;
 }
 
-.ContainerContent {
+.contentContainer {
+    color: white;
+    border: 1px solid black;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 7vh 1fr 1fr;
-    color: white;
-    background-color: #323641;
-    width: 100vw;
-    height: 100vh;
-    border: 1px solid black;
     overflow: scroll;
 }
 
@@ -42,6 +42,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 1.5vw;
+    animation: showCard 0.5s forwards;
 }
 
 .listimage {
@@ -84,18 +85,19 @@
         height: 15vw;
     }
 
-    .ContainerContent {
+    .contentContainer {
+        color: white;
+        border: 1px solid black;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;  
-        width: 100vw;
-        height: 100vh;
+        overflow: scroll;
     }
 
     .Person {
         padding: 3vw;
         font-size: 5vw;
         border: 1px solid black;
+
     }
     .title {
         padding: 2vw;
@@ -103,5 +105,13 @@
     .search {
         padding: 1vw 0.1vw;
         border-radius: 2vw;
+    }
+}
+@keyframes showCard {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

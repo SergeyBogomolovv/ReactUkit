@@ -20,6 +20,9 @@
 .load:hover {
     color: #fff;
 }
+.Card {
+    animation: showCard 1s forwards;
+}
 
 @media screen and (max-width: 900px) {
     .container {
@@ -37,5 +40,13 @@
     .load {
         grid-column: 1;
         justify-self: center;
+    }
+}
+@keyframes showCard {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

@@ -14,6 +14,7 @@
     width: 100vw;
     height: 100vh;
     overflow: scroll;
+    animation: showCard 0.5s forwards;
 }
 
 .NavContainer {
@@ -24,7 +25,9 @@
     border-radius: 0.3vw;
     text-align: start;
 }
-
+.Card {
+    animation: showCard 0.5s forwards;
+}
 .header {
     padding: 1vw;
     background-color: #212529;
@@ -71,5 +74,13 @@
         padding: 2vw;
         border-radius: 0.3vw;
         text-align: start;
+    }
+}
+@keyframes showCard {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

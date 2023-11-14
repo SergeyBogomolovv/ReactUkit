@@ -9,9 +9,7 @@ export default function Group({visible, setVisible, children}) {
     }
   return (
     <div className={rootClasses.join(' ')} >
-      <div className={cl.ContainerContent} >
           {children}
-      </div>
     </div>
   )
 }

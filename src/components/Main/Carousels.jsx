@@ -2,9 +2,9 @@ import { Image } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 import cl from './Main.module.css'
 
-function Carousel1() {
+function Carousel1({clName}) {
   return (
-      <Carousel data-bs-theme="dark" className={cl.Carousel}>
+      <Carousel data-bs-theme="dark" className={clName}>
         <Carousel.Item>
           <img
             className="d-block w-100"

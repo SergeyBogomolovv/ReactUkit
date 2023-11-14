@@ -27,6 +27,7 @@
     margin-bottom: 1vh;
 }
 
+
 @media screen and (max-width: 900px) {
     .cardContainer {
         position: relative;
@@ -35,7 +36,7 @@
         grid-row-gap: 1vh;
     }
     .CardCon {
-        width: 90vw;
+        width: 80vw;
         height: auto;
     }
     .CardTitle {
@@ -51,6 +52,17 @@
     }
     .cardIMG {
     width: auto;
-    height: 75%;
+    height: 30vh;
 }
+}
+
+@keyframes showCard {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

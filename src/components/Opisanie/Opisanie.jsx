@@ -7,7 +7,7 @@ export default function Opisanie() {
   return (
     <div className={cl.OpisanieContainer}>
       {window.innerWidth < 900
-          ? <Carousel1 className={cl.Carousel}/> 
+          ? <Carousel1 clName={cl.Carousel}/> 
           : <Image src="./pngs\photo_2023-10-29_12-15-35.jpg" rounded  className={cl.opisaniePng}/>
       }
       <p className={cl.firstPageOpisanie}>
