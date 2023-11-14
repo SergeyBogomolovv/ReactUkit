@@ -27,10 +27,9 @@
     margin: auto
 }
 
-
 @media screen and (max-width: 900px) {
     .OpisanieContainer {
-        margin: 3vh 1vw;
+        margin: 3vh 3vw;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;

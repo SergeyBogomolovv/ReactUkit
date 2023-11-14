@@ -1,11 +1,15 @@
 import React from 'react'
 import { Image } from 'react-bootstrap'
 import cl from './Opisanie.module.css'
+import Carousel1 from '../Main/Carousels'
 
 export default function Opisanie() {
   return (
     <div className={cl.OpisanieContainer}>
-      <Image src="./pngs\photo_2023-10-29_12-15-35.jpg" rounded  className={cl.opisaniePng}/>
+      {window.innerWidth < 900
+          ? <Carousel1 className={cl.Carousel}/> 
+          : <Image src="./pngs\photo_2023-10-29_12-15-35.jpg" rounded  className={cl.opisaniePng}/>
+      }
       <p className={cl.firstPageOpisanie}>
        Сегодня колледж — это многопрофильное учебное заведение, обладающее высоким административным и педагогическим ресурсом,
        позволяющим готовить высококлассных специалистов в области IT-технологий, рекламы и земельно-имущественных отношений, гармонично

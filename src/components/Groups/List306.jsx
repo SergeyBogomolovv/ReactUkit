@@ -19,14 +19,11 @@ export default function List306({setVisible}) {
   const callBack = e => setSearchPupil(e.target.value)
 
   return (
-    <div>
+    <>
       <GroupTitle title='306' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
-      <div className={cl.listContainer}>
       {SearchedPupils.map(pupils =>
           <ListPerson key={pupils.id} >{pupils.id}. {pupils.name} <img src={pupils.src} className={cl.listimage}/></ListPerson>
           )}
-    
-    </div>
-    </div>
+    </>
   )
 }

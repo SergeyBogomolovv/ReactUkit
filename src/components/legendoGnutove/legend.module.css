@@ -17,6 +17,7 @@
     color: white;
     font-size: 1.5vw;
     justify-self: start;
+    text-align: center;
 }
 
 @media screen and (max-width: 900px) {
@@ -34,7 +35,7 @@
         grid-row: 2;
     }
     .legendContainer {
-        margin: 4vh 3vw;
+        margin: 1vh 3vw;
         gap: 5vw;
         grid-template-columns: 1fr;
     }

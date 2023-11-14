@@ -10,12 +10,11 @@
 }
 
 .Navbar{
-    height: 7vh;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 .Container.active {
     display: grid;
-    justify-content: center;
-    align-items: center;
 }
 
 .NavContainer {
@@ -23,18 +22,13 @@
 }
 
 .ContainerContent {
-    border-radius: 16px;
-    display: grid;
-}
-
-.listContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 7vh 1fr 1fr;
     color: white;
     background-color: #323641;
     width: 100vw;
-    height: 93vh;
+    height: 100vh;
     border: 1px solid black;
     overflow: scroll;
 }
@@ -79,18 +73,21 @@
     text-align: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .Navbar{
         height: auto;
+        grid-column-start: 1;
+        grid-column-end: 1;
     }
     .listimage {
         width: 15vw;
         height: 15vw;
     }
 
-    .listContainer {
+    .ContainerContent {
         display: grid;
-        grid-template-columns: 1fr;  
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;  
         width: 100vw;
         height: 100vh;
     }

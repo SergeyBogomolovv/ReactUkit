@@ -40,11 +40,15 @@
     margin-top: 2vw;
 }
 
+.Image {
+    width: 100%;
+}
+
 @media screen and (max-width: 900px) {
     .buttonsContainer {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 3vh; 
+        grid-gap: 2vh; 
         margin-right: 20vw;
         margin-left: 20vw;
         margin-top: 3vh;
@@ -68,8 +72,8 @@
     .dirik {
         grid-row: 3;
         grid-column: 1;
-        width: 70%;
-        height: 90%;
+        width: 15vh;
+        height: 15vh;
         align-self: center;
         justify-self: center;
     }
@@ -82,10 +86,10 @@
     .WithCarouselContainer {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 3fr 0.5fr 4fr 0,5fr;
+        grid-template-rows: 3fr 0.5fr 1.5fr 0.5fr;
         margin: 2vh 4vw;
         align-items: center;
         justify-items: center;
-        grid-gap: 3vw;
+        grid-gap: 0.5vw;
     }
 }

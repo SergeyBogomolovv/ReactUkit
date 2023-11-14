@@ -12,20 +12,24 @@ export default function Attrativeness() {
     {src: './pngs/attrativnes/kuropatkina.png', name: 'Куропаткина Ирина', text:'У данного преподавателя очень тяжело сидеть на парах. Поток ее мыслей очень хаотичен, поэтому лекции нормальные у нее никогда не получаются, потому что она постоянно переключается на обсуждение политики с учениками, и это может зайти очень далеко, вплоть до обсуждения макдональдса. Исходя из этого можно прояснить, что понимать какой то материал на ее лекциях невозможно. Но это еще не все, доказательтвом ее хаотичному распределению мыслей является ее речь. Она невероятно ужасная, практически после каждого слова присутсвует эээ, нуу, мгее. Подборка смешных фразочек: "ну это какое то быдлятсво!", "ну это просто мама-не горюй", "Егор, вы меня ОШАРАШИЛИ". Еще стоит отметить ее антироссийскую позицию, конечно против этого ничего не имеем, но она уж слишком выражена и во многом противоречит ее словам о "критическом мышлении" которому она так пытается нас научить.'},
   ])
   const [load, setLoad] = useState(false)
-
-  const preLoad = [attractive[0]]
+  const preLoad = []
+  if (window.innerWidth < 900) {
+    preLoad.push(attractive[0])
+  } else {
+    preLoad.push(attractive[0], attractive[1], attractive[2])
+  }
 
   return (
     <>
       {load !== true
-          ? <div className={cl.container}>
-              {preLoad.map(card => <AttrativeCard card={card} key={card.text}/>)}
-              <div className={cl.load} onClick={() => setLoad(true)}>Загрузить еще..</div>
-            </div>
-          : <div className={cl.container}>
-              {attractive.map(card => <AttrativeCard card={card} key={card.text}/>)}
-              <div className={cl.load} onClick={() => setLoad(false)}>Скрыть</div>
-            </div> 
+              ? <div className={cl.container}>
+                  {preLoad.map(card => <AttrativeCard card={card} key={card.text}/>)}
+                  <div className={cl.load} onClick={() => setLoad(true)}>Загрузить еще..</div>
+                </div>
+              : <div className={cl.container}>
+                    {attractive.map(card => <AttrativeCard card={card} key={card.text}/>)}
+                    <div className={cl.load} onClick={() => setLoad(false)}>Скрыть</div>
+                </div>
         }
     </>
       
