@@ -20,9 +20,6 @@
 .load:hover {
     color: #fff;
 }
-.Card {
-    animation: showCard 1s forwards;
-}
 
 @media screen and (max-width: 900px) {
     .container {

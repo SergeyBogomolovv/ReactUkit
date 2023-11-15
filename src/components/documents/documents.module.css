@@ -1,31 +1,12 @@
 .Container {
-    display: none;
+    display: grid;
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.7);
     z-index: 100;
-}
-.Container.active {
-    display: grid;
     align-items: center;
-    animation: showCard 0.5s forwards;
-}
-@keyframes showCard {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-@keyframes closeCard {
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
 }

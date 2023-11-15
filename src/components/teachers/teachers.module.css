@@ -14,7 +14,6 @@
     width: 100vw;
     height: 100vh;
     overflow: scroll;
-    animation: showCard 0.5s forwards;
 }
 
 .NavContainer {
@@ -24,9 +23,6 @@
 .selector {
     border-radius: 0.3vw;
     text-align: start;
-}
-.Card {
-    animation: showCard 0.5s forwards;
 }
 .header {
     padding: 1vw;
@@ -58,6 +54,17 @@
     overflow: scroll;
 }
 
+.cardEnter {
+    animation: showCard 0.5s forwards;
+}
+
+.cardDone {
+    animation: showCard 0.5s reverse;
+}
+
+
+
+
 @media screen and (max-width: 900px) {
     .header {
         padding: 3vw;
@@ -74,13 +81,5 @@
         padding: 2vw;
         border-radius: 0.3vw;
         text-align: start;
-    }
-}
-@keyframes showCard {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
     }
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import cl from './dostoprimechat.module.css'
 import AttrativeCard from './attractiveCard'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 export default function Attrativeness() {
   const [attractive, setAttractive] = useState([
@@ -22,14 +23,23 @@ export default function Attrativeness() {
   return (
     <>
       {load !== true
-              ? <div className={cl.container}>
-                  {preLoad.map(card => <AttrativeCard card={card} key={card.text}/>)}
+              ? <TransitionGroup component='AttrativeCard' className={cl.container}>
+                  {preLoad.map(card =>
+                  <CSSTransition key={card.text} timeout={500} classNames='attractive' mountOnEnter unmountOnExit>
+                     <AttrativeCard card={card} key={card.text} className='attractive'/>
+                  </CSSTransition>
+                     )}
                   <div className={cl.load} onClick={() => setLoad(true)}>Загрузить еще..</div>
-                </div>
-              : <div className={cl.container}>
-                    {attractive.map(card => <AttrativeCard card={card} key={card.text}/>)}
+                  </TransitionGroup>
+
+              : <TransitionGroup component='AttrativeCard' className={cl.container}>
+                    {attractive.map(card =>
+                    <CSSTransition key={card.text} timeout={500} classNames='attractive' mountOnEnter unmountOnExit>
+                      <AttrativeCard card={card} key={card.text} className='attractive'/>
+                    </CSSTransition>
+                      )}
                     <div className={cl.load} onClick={() => setLoad(false)}>Скрыть</div>
-                </div>
+                </TransitionGroup>
         }
     </>
       

@@ -12,10 +12,42 @@ body {
     display: none;
 }
 
+.card-enter-active {
+    animation: showCard 0.6s forwards;
+}
+.card-exit-active {
+    animation: showCard 0.6s reverse;
+}
+
+.attractive-enter-active {
+    animation: showAttractive 0.6s forwards;
+}
+.attractive-exit-active {
+    animation: showAttractive 0.6s reverse;
+}
+
 @media screen and (max-width: 900px) {
     .hr {
         display: block;
         color: #fff;
         border: 1px solid white;
+    }
+}
+@keyframes showCard {
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes showAttractive {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

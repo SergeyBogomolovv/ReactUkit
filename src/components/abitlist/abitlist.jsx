@@ -3,6 +3,7 @@ import AbitHeader from './abitHeader'
 import cl from './abitlist.module.css'
 import Abit from './abit'
 import { useMemo } from 'react'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 export default function Abitlist({visible, setVisible, abiturients}) {
     const rootClasses = [cl.Container]
@@ -22,10 +23,13 @@ export default function Abitlist({visible, setVisible, abiturients}) {
   return (
     <div className={rootClasses.join(' ')}>
       <AbitHeader setVisible={setVisible} search={searchAbit} setSearch={setSearchAbit}/>
-      <div className={cl.contentContainer}>
-        {SearchedAbiturients.map(abit => <Abit abit={abit} key={abit.name} index={abiturients.indexOf(abit) + 1}/>)}
-        
-      </div>
+      <TransitionGroup component='Abit' className={cl.contentContainer}>
+        {SearchedAbiturients.map(abit => 
+        <CSSTransition key={abit.name} timeout={500} classNames='card' mountOnEnter unmountOnExit>
+          <Abit abit={abit} key={abit.name} index={abiturients.indexOf(abit) + 1} className='card'/>
+        </CSSTransition>
+        )}
+      </TransitionGroup>
     </div>
   )
 }

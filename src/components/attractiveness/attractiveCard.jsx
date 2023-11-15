@@ -5,7 +5,7 @@ import { useState } from 'react';
 function AttrativeCard({card}) {
   const [showText, setShowText] = useState(false)
   return (
-      <Card bg='dark' text='light' className={cl.Card}>
+      <Card bg='dark' text='light'>
         <Card.Img variant="top" src={card.src} className={cl.img}/>
         <Card.Body>
         <Card.Title className={cl.CardTitle}>{card.name}</Card.Title>

@@ -1,5 +1,4 @@
 .modal {
-    display: none;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -7,14 +6,11 @@
     left: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 100;
-}
-
-.modal.active {
     display: grid;
     justify-content: center;
     align-items: center;
-    animation: showCard 0.3s forwards;
 }
+
 
 .modalContent {
     padding: 25px;

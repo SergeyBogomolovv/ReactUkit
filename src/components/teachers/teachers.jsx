@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import cl from './teachers.module.css'
 import { CloseButton, Form } from 'react-bootstrap'
 import TeachersCard from './teachersCard'
@@ -7,6 +7,7 @@ import TeachersSelect from './teachersSelect'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { CSSTransition, Transition, TransitionGroup } from 'react-transition-group'
 
 export default function Teachers({visible, setVisible}) {
     const [teachers, setTeachers] = useState([
@@ -45,8 +46,7 @@ export default function Teachers({visible, setVisible}) {
     const SearchedBySubjectTeachers = useMemo(() => {
         return SortedBySubject.filter(post => post.name.includes(searchTeacher))
       }, [searchTeacher, SortedBySubject])
-
-
+      
   return (
     <div className={rootClasses.join(' ')}>
         <Navbar expand="lg" className="bg-body-tertiary"  variant='dark' bg='dark'>
@@ -74,12 +74,14 @@ export default function Teachers({visible, setVisible}) {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-
-        <div className={cl.contentContainer}>
-            {SearchedBySubjectTeachers.map(teachers => 
-                <TeachersCard array={teachers} key={teachers.name}/>
+        
+            <TransitionGroup component='TeachersСard' className={cl.contentContainer}>
+                {SearchedBySubjectTeachers.map(teachers => 
+                <CSSTransition key={teachers.name} timeout={500} classNames='card' mountOnEnter unmountOnExit>
+                    <TeachersCard array={teachers} key={teachers.name} visible={visible} className='card'/>
+                </CSSTransition>
                 )}
-        </div>
+            </TransitionGroup>
     </div>
   )
 }
