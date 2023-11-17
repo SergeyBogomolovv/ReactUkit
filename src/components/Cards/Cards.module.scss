@@ -7,17 +7,20 @@
 .CardTitle {
     font-size: 1.5vw
 }
+
 .CardText {
     font-size: 1vw
 }
+
 .CardCon {
     width: 25vw;
     justify-self: center;
 }
+
 .cardIMG {
-    width: auto;
-    height: 40vh;
+    max-height: 40vh;
 }
+
 .Kits {
     text-align: center;
     color: white;
@@ -37,7 +40,6 @@
     }
     .CardCon {
         width: 80vw;
-        height: auto;
     }
     .CardTitle {
         font-size: 5vw
@@ -51,18 +53,6 @@
         margin-bottom: 0.5vh;
     }
     .cardIMG {
-    width: auto;
-    height: 30vh;
-}
-}
-
-@keyframes showCard {
-    0%{
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0px);
+        max-height: 30vh;
     }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AbitHeader from './abitHeader'
-import cl from './abitlist.module.css'
+import cl from './abitlist.module.scss'
 import Abit from './abit'
 import { useMemo } from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'

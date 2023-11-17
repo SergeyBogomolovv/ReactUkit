@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import cl from './Group108.module.css'
+import cl from './Groups.module.scss'
 import ListPerson from './ListPerson'
 import { CloseButton, Form } from 'react-bootstrap'
 import GroupTitle from './GroupTitle'

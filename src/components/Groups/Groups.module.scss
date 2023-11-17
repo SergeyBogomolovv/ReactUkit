@@ -1,0 +1,45 @@
+@import "./src/defaultStyles/modalContainer.scss";
+@import "./src/defaultStyles/closeBtn.scss";
+@import "./src/defaultStyles/NavContainer.scss";
+
+
+
+.contentContainer {
+    color: white;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow: scroll;
+}
+
+.Person {
+    padding: 2vw 4vh;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5vw;
+}
+
+.listimage {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 15%;
+    float: right;
+}
+
+@media screen and (max-width: 1000px) {
+    .listimage {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .contentContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .Person {
+        padding: 3vw;
+        font-size: 5vw;
+    }
+}

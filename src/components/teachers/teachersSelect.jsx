@@ -1,5 +1,5 @@
 import React from 'react'
-import cl from './teachers.module.css'
+import cl from './teachers.module.scss'
 
 export default function TeachersSelect({options, value, onChange}) {
   return (

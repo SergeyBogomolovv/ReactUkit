@@ -1,5 +1,5 @@
 import React from 'react'
-import cl from './Cards.module.css'
+import cl from './Cards.module.scss'
 
 export default function Title({children}) {
   return (

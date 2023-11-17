@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import cl from './documents.module.css'
+import cl from './documents.module.scss'
 import { useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 

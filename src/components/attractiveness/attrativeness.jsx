@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import cl from './dostoprimechat.module.css'
+import cl from './dostoprimechat.module.scss'
 import AttrativeCard from './attractiveCard'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 

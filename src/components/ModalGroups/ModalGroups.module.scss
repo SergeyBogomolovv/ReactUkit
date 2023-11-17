@@ -7,10 +7,9 @@
     background: rgba(0, 0, 0, 0.5);
     z-index: 100;
     display: grid;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
 }
-
 
 .modalContent {
     padding: 25px;
@@ -19,19 +18,10 @@
     min-width: 30vw;
     display: grid;
     grid-gap: 1vh;
-    
 }
 
 @media screen and (max-width: 900px) {
     .modalContent {
         min-width: 70vw;
-    }
-}
-@keyframes showCard {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
     }
 }

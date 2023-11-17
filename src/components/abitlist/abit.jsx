@@ -1,5 +1,5 @@
 import React from 'react'
-import cl from './abitlist.module.css'
+import cl from './abitlist.module.scss'
 import { Card } from 'react-bootstrap'
 
 export default function Abit({abit, index}) {

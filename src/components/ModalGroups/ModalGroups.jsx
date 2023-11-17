@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import classes from './ModalGroups.module.css'
+import classes from './ModalGroups.module.scss'
 import { Button } from 'react-bootstrap'
 import { CSSTransition } from 'react-transition-group'
 

@@ -1,0 +1,23 @@
+@import "./src/defaultStyles/modalContainer.scss";
+@import "./src/defaultStyles/NavContainer.scss";
+@import "./src/defaultStyles/closeBtn.scss";
+
+
+.contentContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2vh 2vw;
+    grid-gap: 3vw;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 900px) {
+    .contentContainer {
+        grid-template-columns: 1fr;
+    }
+    .selector {
+        padding: 2vw;
+        border-radius: 0.3vw;
+        text-align: start;
+    }
+}

@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import cl from './dostoprimechat.module.css'
+import cl from './dostoprimechat.module.scss'
 import { useState } from 'react';
 
 function AttrativeCard({card}) {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import cl from './teachers.module.css'
+import cl from './teachers.module.scss'
 import { CSSTransition } from 'react-transition-group'
 
 export default function TeachersCard({array, className}) {

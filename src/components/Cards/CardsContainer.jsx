@@ -1,8 +1,6 @@
 import React from 'react'
-import Card3D from './Card3D'
-import ImgOverlayExample from './card'
 import BasicExample from './card'
-import cl from './Cards.module.css'
+import cl from './Cards.module.scss'
 
 export default function CardsContainer() {
   return (

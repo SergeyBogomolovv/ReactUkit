@@ -1,5 +1,5 @@
 import ListGroup from 'react-bootstrap/ListGroup';
-import cl from './Group108.module.css'
+import cl from './Groups.module.scss'
 import ListPerson from './ListPerson';
 import { Button, CloseButton, Image } from 'react-bootstrap';
 import { useState } from 'react';

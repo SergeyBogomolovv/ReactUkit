@@ -1,5 +1,5 @@
 import React from 'react'
-import cl from './Group108.module.css'
+import cl from './Groups.module.scss'
 
 export default function ListPerson({children}) {
   return (

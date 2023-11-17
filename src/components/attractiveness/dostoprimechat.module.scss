@@ -7,7 +7,6 @@
 }
 
 .img {
-    height: auto;
     max-height: 25vw;
 }
 
@@ -16,9 +15,9 @@
     cursor: pointer;
     grid-column: 2;
     justify-self: center;
-}
-.load:hover {
-    color: #fff;
+    &:hover {
+        color: #fff;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -28,7 +27,6 @@
         grid-gap: 3vw;
     }
     .img {
-        height: auto;
         max-height: 100vw;
     }
     .text { 
@@ -36,14 +34,5 @@
     }
     .load {
         grid-column: 1;
-        justify-self: center;
-    }
-}
-@keyframes showCard {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
     }
 }

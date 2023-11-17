@@ -1,0 +1,16 @@
+.Container {
+    display: none;
+    position: fixed;
+    background-color: #323641;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    overflow: scroll;
+}
+
+.Container.active {
+    display: initial;
+}

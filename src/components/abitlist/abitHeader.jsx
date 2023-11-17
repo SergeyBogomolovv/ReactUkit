@@ -1,5 +1,5 @@
 import React from 'react'
-import cl from './abitlist.module.css'
+import cl from './abitlist.module.scss'
 import { CloseButton, Container, Form, Nav, Navbar } from 'react-bootstrap'
 
 export default function AbitHeader({setVisible, search, setSearch}) {

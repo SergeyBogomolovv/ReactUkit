@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import cl from './Cards.module.css'
+import cl from './Cards.module.scss'
 import { Transition } from 'react-transition-group';
 
 function BasicExample(props) {

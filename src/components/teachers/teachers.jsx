@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import cl from './teachers.module.css'
+import cl from './teachers.module.scss'
 import { CloseButton, Form } from 'react-bootstrap'
 import TeachersCard from './teachersCard'
 import { useMemo } from 'react'

@@ -1,0 +1,23 @@
+@import "./src/defaultStyles/modalContainer.scss";
+@import "./src/defaultStyles/closeBtn.scss";
+@import "./src/defaultStyles/NavContainer.scss";
+
+.contentContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2vh 1vw;
+    grid-gap: 2vw;
+    overflow: scroll;
+    .CardTitle {
+        font-weight: 600;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .contentContainer {
+        grid-template-columns: 1fr 1fr;
+        margin: 1vh 2vw;
+        grid-gap: 3vw;
+    }
+}
