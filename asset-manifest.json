@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ReactUkit/static/css/main.962c753b.css",
-    "main.js": "/ReactUkit/static/js/main.463bec26.js",
+    "main.css": "/ReactUkit/static/css/main.9523f135.css",
+    "main.js": "/ReactUkit/static/js/main.33b5cbfd.js",
     "index.html": "/ReactUkit/index.html",
-    "main.962c753b.css.map": "/ReactUkit/static/css/main.962c753b.css.map",
-    "main.463bec26.js.map": "/ReactUkit/static/js/main.463bec26.js.map"
+    "main.9523f135.css.map": "/ReactUkit/static/css/main.9523f135.css.map",
+    "main.33b5cbfd.js.map": "/ReactUkit/static/js/main.33b5cbfd.js.map"
   },
   "entrypoints": [
-    "static/css/main.962c753b.css",
-    "static/js/main.463bec26.js"
+    "static/css/main.9523f135.css",
+    "static/js/main.33b5cbfd.js"
   ]
 }
