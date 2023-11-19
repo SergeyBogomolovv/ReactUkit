@@ -19,18 +19,27 @@ export default function Abitlist({visible, setVisible, abiturients}) {
     const SearchedAbiturients = useMemo(() => {
       return abiturients.filter(abit => abit.name.includes(searchAbit))
     }, [searchAbit, abiturients])
+    
 
-  return (
-    <div className={rootClasses.join(' ')}>
-      <AbitHeader setVisible={setVisible} search={searchAbit} setSearch={setSearchAbit}/>
-      <TransitionGroup component='Abit' className={cl.contentContainer}>
-        {SearchedAbiturients.map(abit => 
-        <CSSTransition key={abit.name} timeout={500} classNames='card' mountOnEnter unmountOnExit>
-          <Abit abit={abit} key={abit.name} index={abiturients.indexOf(abit) + 1} className='card'/>
-        </CSSTransition>
-        )}
-      </TransitionGroup>
-    </div>
-  )
+    if (SearchedAbiturients.length === 0) {
+      return(<div className={rootClasses.join(' ')}>
+              <AbitHeader setVisible={setVisible} search={searchAbit} setSearch={setSearchAbit}/>
+              <div className={cl.empty}>Абитуриентов нет</div>
+             </div>
+    ) 
+    }
+
+    return (
+      <div className={rootClasses.join(' ')}>
+        <AbitHeader setVisible={setVisible} search={searchAbit} setSearch={setSearchAbit}/>
+        <TransitionGroup className={cl.contentContainer}>
+          {SearchedAbiturients.map(abit => 
+          <CSSTransition key={abit.name} timeout={500} classNames='card' mountOnEnter unmountOnExit>
+            <Abit abit={abit} key={abit.name} index={abiturients.indexOf(abit) + 1} className='card'/>
+          </CSSTransition>
+          )}
+        </TransitionGroup>
+      </div>
+    )
 }
 

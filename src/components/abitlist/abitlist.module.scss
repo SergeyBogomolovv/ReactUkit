@@ -1,23 +1,36 @@
 @import "./src/defaultStyles/modalContainer.scss";
 @import "./src/defaultStyles/closeBtn.scss";
 @import "./src/defaultStyles/NavContainer.scss";
+@import "./src/defaultStyles/fontsizes.scss";
 
-.contentContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 2vh 1vw;
-    grid-gap: 2vw;
-    overflow: scroll;
-    .CardTitle {
-        font-weight: 600;
-    }
+.Container {
+    @include container;
+    display: none;
+    position: fixed;
 }
 
+.Container.active {
+    display: initial;
+}
+
+.contentContainer {
+    @include contentContainer(1fr 1fr 1fr 1fr);
+}
+
+.CardTitle {
+    font-weight: 600;
+}
+.empty {
+    text-align: center;
+    margin-top: 10vw;
+    font-size: $PcHeading;
+}
 
 @media screen and (max-width: 900px) {
+    .empty {
+        font-size: $MobileHeading;
+    }
     .contentContainer {
-        grid-template-columns: 1fr 1fr;
-        margin: 1vh 2vw;
-        grid-gap: 3vw;
+        @include mobileContentContainer(1fr 1fr);
     }
 }

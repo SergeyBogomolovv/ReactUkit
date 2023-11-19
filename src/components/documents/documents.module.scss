@@ -1,12 +1,8 @@
+@import "./src/defaultStyles/colors.scss";
+@import "./src/defaultStyles/modalContainer.scss";
+
 .Container {
-    display: grid;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 100;
+    @include container;
+    background: $shadowBg;
     align-items: center;
 }

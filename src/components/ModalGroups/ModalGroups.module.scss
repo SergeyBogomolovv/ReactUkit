@@ -1,12 +1,9 @@
+@import "./src/defaultStyles/colors.scss";
+@import "./src/defaultStyles/modalContainer.scss";
+
 .modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 100;
-    display: grid;
+    @include container;
+    background-color: $shadowBg;
     justify-items: center;
     align-items: center;
 }

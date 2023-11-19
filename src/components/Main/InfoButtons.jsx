@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import cl from './Main.module.css'
+import cl from './Main.module.scss'
 
 export default function InfoButtons({children}) {
   return (

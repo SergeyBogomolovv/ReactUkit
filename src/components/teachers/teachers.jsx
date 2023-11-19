@@ -75,7 +75,7 @@ export default function Teachers({visible, setVisible}) {
             </Container>
         </Navbar>
         
-            <TransitionGroup component='TeachersСard' className={cl.contentContainer}>
+            <TransitionGroup className={cl.contentContainer}>
                 {SearchedBySubjectTeachers.map(teachers => 
                 <CSSTransition key={teachers.name} timeout={500} classNames='card' mountOnEnter unmountOnExit>
                     <TeachersCard array={teachers} key={teachers.name} visible={visible} className='card'/>

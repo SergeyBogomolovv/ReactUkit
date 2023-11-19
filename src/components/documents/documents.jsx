@@ -7,24 +7,34 @@ import { useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 function Documents({visible, setVisible, abiturients, setAbiturients}) {
-
-
-
     const [nameValue, setNameValue] = useState('')
     const [mailValue, setMailValue] = useState('')
     const [ballValue, setBallValue] = useState('')
     const [inputValue, setInputValue] = useState('')
 
     const send = () => {
-      setAbiturients([...abiturients, {name: nameValue, email: mailValue, ball: ballValue, input: inputValue}])
+      if (ballValue > 5 || ballValue < 2){
+        alert('Ошибка, введен неверный балл')
+        setBallValue('')
+
+      } else if (inputValue === '' || nameValue === '' || mailValue === '' || ballValue === '') {
+        alert('Ошибка, проверьте данные')
+
+      } else {
+        setAbiturients([...abiturients, {name: nameValue, email: mailValue, ball: ballValue, input: inputValue}])
+        setNameValue('')
+        setMailValue('')
+        setBallValue('')
+        setInputValue('')
+        setVisible(false)
+      }
+    }
+
+    const close = () => {
       setNameValue('')
       setMailValue('')
       setBallValue('')
       setInputValue('')
-      setVisible(false)
-    }
-
-    const close = () => {
       setVisible(false)
     }
 
@@ -33,7 +43,7 @@ function Documents({visible, setVisible, abiturients, setAbiturients}) {
       <div className={cl.Container}>
         <Modal.Dialog>
           <Modal.Header>
-            <Modal.Title>Подать документы</Modal.Title>
+            <Modal.Title style={{color: '#000'}}>Подать документы</Modal.Title>
           </Modal.Header>
 
           <Modal.Body data-bs-theme="dark">
@@ -58,12 +68,12 @@ function Documents({visible, setVisible, abiturients, setAbiturients}) {
             value={mailValue}
             onChange={e => setMailValue(e.target.value)}
           />
-          <InputGroup.Text id="basic-addon2">@gmail.com</InputGroup.Text>
+          <InputGroup.Text id="basic-addon2">example@gmail.com</InputGroup.Text>
         </InputGroup>
 
         <InputGroup className="mb-3">
           <InputGroup.Text>Ваш средний балл</InputGroup.Text>
-          <Form.Control placeholder='0.00' value={ballValue} onChange={e => setBallValue(e.target.value)}/>
+          <Form.Control placeholder='0.00' type='number' value={ballValue} onChange={e => setBallValue(e.target.value)}/>
         </InputGroup>
 
         <InputGroup className="mb-3">
@@ -74,7 +84,7 @@ function Documents({visible, setVisible, abiturients, setAbiturients}) {
 
           <Modal.Footer>
           <Button variant="secondary" onClick={close}>Закрыть</Button>
-            <Button variant="primary" onClick={send}>Отправить</Button>
+          <Button variant="primary" onClick={send}>Отправить</Button>
           </Modal.Footer>
         </Modal.Dialog>
     </div>

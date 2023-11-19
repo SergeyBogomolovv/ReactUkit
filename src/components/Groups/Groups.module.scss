@@ -1,24 +1,30 @@
 @import "./src/defaultStyles/modalContainer.scss";
 @import "./src/defaultStyles/closeBtn.scss";
 @import "./src/defaultStyles/NavContainer.scss";
+@import "./src/defaultStyles/colors.scss";
+@import "./src/defaultStyles/fontsizes.scss";
 
+.Container {
+    @include container;
+    display: none;
+    position: fixed;
+}
 
+.Container.active {
+    display: initial;
+}
 
 .contentContainer {
-    color: white;
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    overflow: scroll;
+    @include contentContainer(1fr 1fr 1fr);
 }
 
 .Person {
     padding: 2vw 4vh;
-    border: 1px solid black;
+    border: $groupBorder;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 1.5vw;
+    font-size: $PcMediumText;
 }
 
 .listimage {
@@ -40,6 +46,6 @@
 
     .Person {
         padding: 3vw;
-        font-size: 5vw;
+        font-size: $MobileHeading;
     }
 }

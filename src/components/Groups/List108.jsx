@@ -42,7 +42,7 @@ export default function List108({setVisible}) {
   return (
     <>
       <GroupTitle title='108' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
-      <TransitionGroup component='TeachersСard' className={cl.contentContainer}>
+      <TransitionGroup className={cl.contentContainer}>
         {SearchedPupils.map(pupil =>
         <CSSTransition key={pupil.id} timeout={500} classNames='card' mountOnEnter unmountOnExit>
           <ListPerson key={pupil.id} className='card'>{pupil.id}. {pupil.name} <img src={pupil.src} className={cl.listimage}/></ListPerson>

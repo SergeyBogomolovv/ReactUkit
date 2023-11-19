@@ -1,0 +1,36 @@
+@import "./src/defaultStyles/colors.scss";
+@import "./src/defaultStyles/fontsizes.scss";
+
+$imgPcScale: 4vw;
+$imgMobileScale: 15vw;
+
+.container {
+    display: flex;
+    padding: 1vw;
+    background-color: $headColor;
+    gap: 2vw;
+    justify-content: center;
+}
+.txt {
+    font-size: $PcCardHeading;
+    font-weight: 600;
+    align-self: center;
+}
+.img {
+    width: $imgPcScale;
+    height: $imgPcScale;
+}
+
+@media screen and (max-width: 900px){
+    .txt {
+        font-size: $MobileCardHeading;
+    }
+    .img {
+        width: $imgMobileScale;
+        height: $imgMobileScale;
+    }
+    .container {
+        padding: 4vw;
+        gap: 3vw;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Container, Image, Row } from 'react-bootstrap'
 import Carousel1 from './Carousels'
-import cl from './Main.module.css'
+import cl from './Main.module.scss'
 
 export default function WithCarousel() {
   return (

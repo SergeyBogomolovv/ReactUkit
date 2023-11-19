@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './App.css'
-import './Card.css'
+import './App.scss'
 import CardsContainer from './components/Cards/CardsContainer';
 import Header from './components/Header';
 import { Accordion, Button } from 'react-bootstrap';
@@ -77,6 +76,4 @@ function App() {
       </div>
     )
 }
-
-
 export default App;

@@ -1,15 +1,8 @@
+@import "./src/defaultStyles/fontsizes.scss";
 .cardContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 3vh 0;
-}
-
-.CardTitle {
-    font-size: 1.5vw
-}
-
-.CardText {
-    font-size: 1vw
 }
 
 .CardCon {
@@ -23,8 +16,7 @@
 
 .Kits {
     text-align: center;
-    color: white;
-    font-size: 2.5vw;
+    font-size: $PcHeading;
     font-weight: 700;
     margin-top: 6vh;
     margin-bottom: 1vh;
@@ -41,14 +33,8 @@
     .CardCon {
         width: 80vw;
     }
-    .CardTitle {
-        font-size: 5vw
-    }
-    .CardText {
-        font-size: 4vw
-    }
     .Kits {
-        font-size: 5vw;
+        font-size: $MobileHeading;
         margin-top: 5vh;
         margin-bottom: 0.5vh;
     }

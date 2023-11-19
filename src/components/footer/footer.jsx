@@ -1,5 +1,5 @@
 import React from 'react'
-import cl from './footer.module.css'
+import cl from './footer.module.scss'
 
 export default function Footer() {
   return (

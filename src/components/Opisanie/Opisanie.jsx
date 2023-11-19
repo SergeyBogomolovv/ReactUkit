@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image } from 'react-bootstrap'
-import cl from './Opisanie.module.css'
+import cl from './Opisanie.module.scss'
 import Carousel1 from '../Main/Carousels'
 
 export default function Opisanie() {

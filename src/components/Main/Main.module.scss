@@ -1,0 +1,87 @@
+@import "./src/defaultStyles/fontsizes.scss";
+
+.WithCarouselContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 11fr 1fr;
+    margin: 2vh 4vw;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 1vw;
+}
+
+.Carousel {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column: 1;
+}
+
+.dirik {
+    grid-column: 2;
+    grid-row: 2;
+    border-radius: 15%;
+    height: 50vh;
+}
+
+.dirikQuestion {
+    font-size: $PclotOfTxt;
+    grid-column: 2;
+    align-self: start;
+    grid-row: 3;
+}
+
+.dirikName {
+    font-size: $PclotOfTxt;
+    grid-column: 2;
+    align-self: end; 
+    grid-row: 1;
+}
+
+.buttonsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10vw; 
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 2vw;
+    
+}
+.Image {
+    width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .WithCarouselContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 0.5fr 1.5fr 0.5fr;
+        margin: 2vh 4vw;
+        grid-gap: 0.5vw;
+    }
+    .dirikQuestion {
+        font-size: $MobileHeading;
+        grid-column: 1;
+        align-self: center;
+        grid-row: 4;
+    }
+    .dirikName {
+        grid-column: 1;
+        grid-row: 2;
+        font-size: $MobileHeading;
+        align-self: center; 
+    }
+    .dirik {
+        grid-row: 3;
+        grid-column: 1;
+        width: 15vh;
+        height: 15vh;
+        align-self: center;
+        justify-self: center;
+    }
+    .buttonsContainer {
+        grid-template-columns: 1fr;
+        grid-gap: 2vh; 
+        margin-right: 20vw;
+        margin-left: 20vw;
+        margin-top: 3vh;
+    }
+}

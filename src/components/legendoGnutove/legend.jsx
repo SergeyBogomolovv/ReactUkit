@@ -1,5 +1,5 @@
 import React from 'react'
-import cl from './legend.module.css'
+import cl from './legend.module.scss'
 
 export default function Legend() {
   return (

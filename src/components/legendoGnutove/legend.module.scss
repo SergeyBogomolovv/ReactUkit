@@ -1,42 +1,36 @@
+@import "./src/defaultStyles/fontsizes.scss";
+
 .legendContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 10vh 5vw;
     gap: 5vw;
-    justify-content: center;
     align-items: center;
+    justify-items: center;
 }
 .legendImg {
     width: 30vw;
     height: 20vw;
-    justify-self: center;
     border-radius: 2%;
 }
 
 .legend {
-    color: white;
-    font-size: 1.5vw;
-    justify-self: start;
+    font-size: $PcMediumText;
     text-align: center;
 }
 
 @media screen and (max-width: 900px) {
     .legend {
-        font-size: 3.5vw;
-        grid-row: 1;
+        font-size: $MobilelotOfTxt;
         width: 90vw;
-        justify-self: center;
     }
     .legendImg {
         width: 90vw;
         height: auto;
-        justify-self: center;
-        border-radius: 2%;
         grid-row: 2;
     }
     .legendContainer {
         margin: 1vh 3vw;
-        gap: 5vw;
         grid-template-columns: 1fr;
     }
 }

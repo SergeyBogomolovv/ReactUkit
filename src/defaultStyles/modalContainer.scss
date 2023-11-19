@@ -1,16 +1,28 @@
-.Container {
-    display: none;
-    position: fixed;
-    background-color: #323641;
+@import "./src/defaultStyles/colors.scss";
+
+@mixin container {
+    display: grid;
     width: 100vw;
     height: 100vh;
+    background-color: $bgColor;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: 100;
     overflow: scroll;
+    position: fixed;
 }
 
-.Container.active {
-    display: initial;
+@mixin contentContainer($coltemp...) {
+    display: grid;
+    grid-template-columns: $coltemp;
+    margin: 2vh 1vw;
+    grid-gap: 2vw;
+    overflow: scroll;
+}
+
+@mixin mobileContentContainer($coltemp...) {
+    grid-template-columns: $coltemp;
+    margin: 1vh 2vw;
+    grid-gap: 3vw;
 }

@@ -1,6 +1,6 @@
 import { Image } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
-import cl from './Main.module.css'
+import cl from './Main.module.scss'
 
 function Carousel1({clName}) {
   return (

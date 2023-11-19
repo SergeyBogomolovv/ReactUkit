@@ -3,17 +3,23 @@
 @import "./src/defaultStyles/closeBtn.scss";
 
 
+.Container {
+    @include container;
+    display: none;
+    position: fixed;
+}
+
+.Container.active {
+    display: initial;
+}
+
 .contentContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 2vh 2vw;
-    grid-gap: 3vw;
-    overflow: scroll;
+    @include contentContainer(1fr 1fr 1fr 1fr);
 }
 
 @media screen and (max-width: 900px) {
     .contentContainer {
-        grid-template-columns: 1fr;
+        @include mobileContentContainer(1fr);
     }
     .selector {
         padding: 2vw;

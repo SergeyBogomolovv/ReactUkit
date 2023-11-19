@@ -1,6 +1,8 @@
+@import "./src/defaultStyles/modalContainer.scss";
+@import "./src/defaultStyles/fontsizes.scss";
+
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    @include contentContainer(1fr 1fr 1fr);
     grid-column-gap: 5vw;
     grid-row-gap: 2vw;
     margin: 4vh 2vw;
@@ -22,15 +24,13 @@
 
 @media screen and (max-width: 900px) {
     .container {
-        grid-template-columns: 1fr;
-        margin: 2vh 3vw;
-        grid-gap: 3vw;
+        @include mobileContentContainer(1fr);
     }
     .img {
         max-height: 100vw;
     }
     .text { 
-        font-size: 3.6vw;
+        font-size: $MobilelotOfTxt;
     }
     .load {
         grid-column: 1;
