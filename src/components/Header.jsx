@@ -17,7 +17,12 @@ function Header({setVisible, setFirstOtdelenie, setSecondOtdelenie, setThirdOtde
             <Nav className="me-auto">
               <Nav.Link href="https://www.mgkit.ru/">Официальный сайт</Nav.Link>
               <Nav.Link href="https://vk.com/s.bogomolov0">Кто делал</Nav.Link>
-              <Nav.Link onClick={() => setVisible(true)}>Список поступающих</Nav.Link>
+              <Nav.Link onClick={() => {
+                setVisible(true)
+                setFirstOtdelenie(false)
+                setSecondOtdelenie(false)
+                setThirdOtdelenie(false)
+                }}>Список поступающих</Nav.Link>
               <NavDropdown title="Отделения" id="dark-nav-dropdown" data-bs-theme="dark">
                 <NavDropdown.Item onClick={() => {
                   setFirstOtdelenie(true)
