@@ -4,12 +4,9 @@ import cl from './abitlist.module.scss'
 import Abit from './abit'
 import { useMemo } from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import NotFound from '../alert/alert'
 
 export default function Abitlist({visible, setVisible, abiturients}) {
-    const rootClasses = [cl.Container]
-    if(visible === true) {
-        rootClasses.push(cl.active)
-    }
 
     abiturients.sort((a,b) => a.ball - b.ball)
     abiturients.reverse()
@@ -22,15 +19,15 @@ export default function Abitlist({visible, setVisible, abiturients}) {
     
 
     if (SearchedAbiturients.length === 0) {
-      return(<div className={rootClasses.join(' ')}>
+      return(<>
               <AbitHeader setVisible={setVisible} search={searchAbit} setSearch={setSearchAbit}/>
-              <div className={cl.empty}>Абитуриентов нет</div>
-             </div>
+              <NotFound heading='Извините, абитуриенты не найдены' text='Проблема может быть в том, что вы не правильно ввели имя, такого абитуриента не существует, или в наш колледж еще никто не подал документы'/>
+             </>
     ) 
     }
 
     return (
-      <div className={rootClasses.join(' ')}>
+      <>
         <AbitHeader setVisible={setVisible} search={searchAbit} setSearch={setSearchAbit}/>
         <TransitionGroup className={cl.contentContainer}>
           {SearchedAbiturients.map(abit => 
@@ -39,7 +36,7 @@ export default function Abitlist({visible, setVisible, abiturients}) {
           </CSSTransition>
           )}
         </TransitionGroup>
-      </div>
+      </>
     )
 }
 

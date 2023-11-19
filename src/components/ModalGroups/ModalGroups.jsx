@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group'
 export default function ModalGroups({children, visible, setVisible}) {  
 
   return (
-    <CSSTransition in={visible} timeout={500} classNames='card' mountOnEnter unmountOnExit>
+    <CSSTransition in={visible} timeout={500} classNames='attractive' mountOnEnter unmountOnExit>
         <div className={classes.modal} onClick={() => setVisible(false)}>
         <div className={classes.modalContent} onClick={(e) => e.stopPropagation()}> 
             {children}

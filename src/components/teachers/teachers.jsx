@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import cl from './teachers.module.scss'
 import { CloseButton, Form } from 'react-bootstrap'
 import TeachersCard from './teachersCard'
@@ -7,7 +7,8 @@ import TeachersSelect from './teachersSelect'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { CSSTransition, Transition, TransitionGroup } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import NotFound from '../alert/alert'
 
 export default function Teachers({visible, setVisible}) {
     const [teachers, setTeachers] = useState([
@@ -30,11 +31,6 @@ export default function Teachers({visible, setVisible}) {
         {name: "Глускер  Александр Игоревич", img: "./pngs/teachers/glusi.png", subject: 'proger', description: "ГЛУСКЕР СМЕТАНОВИЧ, когда он с курочкой - БОЙСЯ ЕГО"},
         {name: "Валеев Михаил Владимирович", img: "./pngs/teachers/valeev.png", subject: 'proger', description: "Ну да ты прав), так го пить! Ну многих смущает что я преподаватель"},
     ])
-    
-    const rootClasses = [cl.Container]
-    if(visible === true) {
-    rootClasses.push(cl.active)
-    }
      
     const [searchTeacher, setSearchTeacher] = useState('')
     const [chooseSubject, setChooseSubject] = useState('')
@@ -47,41 +43,74 @@ export default function Teachers({visible, setVisible}) {
         return SortedBySubject.filter(post => post.name.includes(searchTeacher))
       }, [searchTeacher, SortedBySubject])
       
-  return (
-    <div className={rootClasses.join(' ')}>
-        <Navbar expand="lg" className="bg-body-tertiary"  variant='dark' bg='dark'>
-            <Container as='div' className={cl.NavContainer}>
-                <Navbar.Brand>Преподаватели</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className={[cl.NavContainer, 'me-auto'].join(' ')}>
-                <Form.Control type="text"  placeholder="Поиск по имени" value={searchTeacher} onChange={e => setSearchTeacher(e.target.value)} />
-                    <TeachersSelect options={[
-                        {value: '', name: 'Все предметы'},
-                        {value: 'PE', name: 'Физкультура'},
-                        {value: 'history', name: 'История'}, 
-                        {value: 'OBZ', name: 'ОБЖ'}, 
-                        {value: 'russian', name: 'Руссий язык'},
-                        {value: 'literature', name: 'Литература'}, 
-                        {value: 'math', name: 'Математика'}, 
-                        {value: 'info', name: 'Информатика'}, 
-                        {value: 'biology', name: 'Биология'}, 
-                        {value: 'proger', name: 'Программирование'},
-                        {value: 'physiks', name: 'Физика'},
-                        ]} value={chooseSubject} onChange={sort => setChooseSubject(sort)} /> 
-                    <CloseButton variant='white' onClick={() => setVisible(false)} className={cl.closeBtn}/>
-                </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-        
-            <TransitionGroup className={cl.contentContainer}>
-                {SearchedBySubjectTeachers.map(teachers => 
-                <CSSTransition key={teachers.name} timeout={500} classNames='card' mountOnEnter unmountOnExit>
-                    <TeachersCard array={teachers} key={teachers.name} visible={visible} className='card'/>
-                </CSSTransition>
-                )}
-            </TransitionGroup>
-    </div>
-  )
+
+    if (SearchedBySubjectTeachers.length === 0) {
+        return (
+        <>
+            <Navbar expand="lg" className="bg-body-tertiary"  variant='dark' bg='dark'>
+                <Container as='div' className={cl.NavContainer}>
+                    <Navbar.Brand>Преподаватели</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className={[cl.NavContainer, 'me-auto'].join(' ')}>
+                    <Form.Control type="text"  placeholder="Поиск по имени" value={searchTeacher} onChange={e => setSearchTeacher(e.target.value)} />
+                        <TeachersSelect options={[
+                            {value: '', name: 'Все предметы'},
+                            {value: 'PE', name: 'Физкультура'},
+                            {value: 'history', name: 'История'}, 
+                            {value: 'OBZ', name: 'ОБЖ'}, 
+                            {value: 'russian', name: 'Руссий язык'},
+                            {value: 'literature', name: 'Литература'}, 
+                            {value: 'math', name: 'Математика'}, 
+                            {value: 'info', name: 'Информатика'}, 
+                            {value: 'biology', name: 'Биология'}, 
+                            {value: 'proger', name: 'Программирование'},
+                            {value: 'physiks', name: 'Физика'},
+                            ]} value={chooseSubject} onChange={sort => setChooseSubject(sort)} /> 
+                        <CloseButton variant='white' onClick={() => setVisible(false)} className={cl.closeBtn}/>
+                    </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+            <NotFound heading={'Извините, учитель с именем ' + searchTeacher + ' не найден'} text='Вероятно вы могли ошибиться в имени, или такого учителя нету в базе данных'/>
+        </>
+        )
+    }
+    return (
+        <>
+            <Navbar expand="lg" className="bg-body-tertiary"  variant='dark' bg='dark'>
+                <Container as='div' className={cl.NavContainer}>
+                    <Navbar.Brand>Преподаватели</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className={[cl.NavContainer, 'me-auto'].join(' ')}>
+                    <Form.Control type="text"  placeholder="Поиск по имени" value={searchTeacher} onChange={e => setSearchTeacher(e.target.value)} />
+                        <TeachersSelect options={[
+                            {value: '', name: 'Все предметы'},
+                            {value: 'PE', name: 'Физкультура'},
+                            {value: 'history', name: 'История'}, 
+                            {value: 'OBZ', name: 'ОБЖ'}, 
+                            {value: 'russian', name: 'Руссий язык'},
+                            {value: 'literature', name: 'Литература'}, 
+                            {value: 'math', name: 'Математика'}, 
+                            {value: 'info', name: 'Информатика'}, 
+                            {value: 'biology', name: 'Биология'}, 
+                            {value: 'proger', name: 'Программирование'},
+                            {value: 'physiks', name: 'Физика'},
+                            ]} value={chooseSubject} onChange={sort => setChooseSubject(sort)} /> 
+                        <CloseButton variant='white' onClick={() => setVisible(false)} className={cl.closeBtn}/>
+                    </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+            
+                <TransitionGroup className={cl.contentContainer}>
+                    {SearchedBySubjectTeachers.map(teachers => 
+                    <CSSTransition key={teachers.name} timeout={500} classNames='card' mountOnEnter unmountOnExit>
+                        <TeachersCard array={teachers} key={teachers.name} visible={visible} className='card'/>
+                    </CSSTransition>
+                    )}
+                </TransitionGroup>
+        </>
+    )
 }

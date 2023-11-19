@@ -6,6 +6,7 @@ import { useState } from 'react';
 import GroupTitle from './GroupTitle';
 import { useMemo } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import NotFound from '../alert/alert';
 
 export default function List108({setVisible}) {
   const [pupil, setPupil] = useState([
@@ -38,6 +39,15 @@ export default function List108({setVisible}) {
   }, [searchPupil, pupil])
 
   const callBack = e => setSearchPupil(e.target.value)
+
+  if (SearchedPupils.length === 0) {
+    return (
+      <>
+        <GroupTitle title='108' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
+        <NotFound heading={'Извините, ученик ' + searchPupil + ' не найден'} text="Проверьте правильность написания имени и существует ли ученик в этой группе"/>
+      </>
+    )
+  }
 
   return (
     <>

@@ -3,16 +3,6 @@
 @import "./src/defaultStyles/NavContainer.scss";
 @import "./src/defaultStyles/fontsizes.scss";
 
-.Container {
-    @include container;
-    display: none;
-    position: fixed;
-}
-
-.Container.active {
-    display: initial;
-}
-
 .contentContainer {
     @include contentContainer(1fr 1fr 1fr 1fr);
 }

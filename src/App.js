@@ -14,21 +14,66 @@ import Teachers from './components/teachers/teachers';
 import List108 from './components/Groups/List108';
 import List309 from './components/Groups/List309';
 import List306 from './components/Groups/List306';
-import Group from './components/Groups/Group';
 import Footer from './components/footer/footer';
 import Documents from './components/documents/documents';
 import Abitlist from './components/abitlist/abitlist';
+import FirstOtdelenie from './components/otdeleniya/firstOtdelenie';
 
 function App() {
     const [abiturients, setAbiturients] = useState([])
     const [modalGroups, setModalGroups] = useState(false)
-    const [group108, setGroup108] = useState(false)
-    const [group306, setGroup306] = useState(false)
-    const [group309, setGroup309] = useState(false)
     const [teachers, setTeachers] = useState(false)
     const [modalDocs, setModalDocs] = useState(false)
     const [modalAbits, setModalAbits] = useState(false)
+
+    const [firstOtdelenie, setFirstOtdelenie] = useState(false)
+    const [secondOtdelenie, setSecondOtdelenie] = useState(false)
+    const [thirdOtdelenie, setThirdOtdelenie] = useState(false)
+    
   
+  // Группы
+    const [group108, setGroup108] = useState(false)
+    const [group306, setGroup306] = useState(false)
+    const [group309, setGroup309] = useState(false)
+
+    if (group108) {
+      return (
+        <List108 setVisible={setGroup108}/>
+      )
+    }
+    if (group306) {
+      return (
+        <List306 setVisible={setGroup306}/>
+      )
+    }
+    if (group309) {
+      return (
+        <List309 setVisible={setGroup309}/>
+      )
+    }
+    
+    if (firstOtdelenie) {
+      return (
+        <>
+          <Header setVisible={setModalAbits}/>
+          <FirstOtdelenie setFirstOtdelenie={setFirstOtdelenie}/>
+          <Footer/>
+        </>
+      )
+    }
+
+    if (teachers) {
+      return (
+        <Teachers visible={teachers} setVisible={setTeachers}/>
+      )
+    }
+
+    if (modalAbits) {
+      return (
+        <Abitlist visible={modalAbits} setVisible={setModalAbits} abiturients={abiturients}/>
+      )
+    }
+
     return (
       <div>
         <Header setVisible={setModalAbits}/>
@@ -40,7 +85,6 @@ function App() {
           <Button variant="secondary" onClick={() => setModalGroups(true)}>Список групп</Button></InfoButtons>
 
         <ModalGroups visible={modalGroups} setVisible={setModalGroups}>
-          
             <Button variant="dark" onClick={() => {
               setGroup108(true) 
               setModalGroups(false)}
@@ -56,15 +100,9 @@ function App() {
               setGroup309(true) 
               setModalGroups(false)}
               }>ИСП-309</Button>
-
         </ModalGroups>
 
-        <Group visible={group108} ><List108 setVisible={setGroup108}/></Group>
-        <Group visible={group306}><List306 setVisible={setGroup306}/></Group>
-        <Group visible={group309}><List309 setVisible={setGroup309}/></Group>
-        <Teachers visible={teachers} setVisible={setTeachers}/> 
         <Documents visible={modalDocs} setVisible={setModalDocs} abiturients={abiturients} setAbiturients={setAbiturients}/>
-        <Abitlist visible={modalAbits} setVisible={setModalAbits} abiturients={abiturients}/>
 
         <Opisanie/>
         <Title>Три кита, на которых держиться наш колледж:</Title>

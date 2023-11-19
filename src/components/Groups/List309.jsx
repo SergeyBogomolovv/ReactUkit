@@ -3,6 +3,7 @@ import cl from './Groups.module.scss'
 import ListPerson from './ListPerson'
 import { CloseButton } from 'react-bootstrap'
 import GroupTitle from './GroupTitle'
+import NotFound from '../alert/alert'
 
 export default function List309({setVisible}) {
   const [pupil, setPupil] = useState([
@@ -17,6 +18,16 @@ export default function List309({setVisible}) {
   }, [searchPupil, pupil])
 
   const callBack = e => setSearchPupil(e.target.value)
+
+  if (SearchedPupils.length === 0) {
+    return (
+      <>
+        <GroupTitle title='309' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
+        <NotFound heading={'Извините, ученик ' + searchPupil + ' не найден'} text="Проверьте правильность написания имени и существует ли ученик в этой группе"/>
+      </>
+    )
+  }
+
   return (
     <>
       <GroupTitle title='309' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
