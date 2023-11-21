@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import NotFound from '../alert/alert';
 
-export default function List108({setVisible}) {
+export default function List108() {
   const [pupil, setPupil] = useState([
     {id: 1, name: 'Богомолов Сергей', src: './pngs/Grekich.png'},
     {id: 2, name: 'Уфаркина Мария', src: './pngs/masha.png'},
@@ -43,7 +43,7 @@ export default function List108({setVisible}) {
   if (SearchedPupils.length === 0) {
     return (
       <>
-        <GroupTitle title='108' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
+        <GroupTitle title='108' searchPupil={searchPupil} callBack={callBack}/>
         <NotFound heading={'Извините, ученик ' + searchPupil + ' не найден'} text="Проверьте правильность написания имени и существует ли ученик в этой группе"/>
       </>
     )
@@ -51,7 +51,7 @@ export default function List108({setVisible}) {
 
   return (
     <>
-      <GroupTitle title='108' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
+      <GroupTitle title='108' searchPupil={searchPupil} callBack={callBack}/>
       <TransitionGroup className={cl.contentContainer}>
         {SearchedPupils.map(pupil =>
         <CSSTransition key={pupil.id} timeout={500} classNames='card' mountOnEnter unmountOnExit>

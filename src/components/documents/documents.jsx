@@ -3,10 +3,14 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import cl from './documents.module.scss'
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { useDispatch, useSelector } from 'react-redux';
+import { setModalDocsFalse } from '../store/WindowStates';
 
-function Documents({visible, setVisible, abiturients, setAbiturients}) {
+function Documents({abiturients, setAbiturients}) {
+    const dispatch = useDispatch()
+    const visible = useSelector(state => state.modalDocs.state)
     const [nameValue, setNameValue] = useState('')
     const [mailValue, setMailValue] = useState('')
     const [ballValue, setBallValue] = useState('')
@@ -26,7 +30,7 @@ function Documents({visible, setVisible, abiturients, setAbiturients}) {
         setMailValue('')
         setBallValue('')
         setInputValue('')
-        setVisible(false)
+        dispatch(setModalDocsFalse())
       }
     }
 
@@ -35,7 +39,7 @@ function Documents({visible, setVisible, abiturients, setAbiturients}) {
       setMailValue('')
       setBallValue('')
       setInputValue('')
-      setVisible(false)
+      dispatch(setModalDocsFalse())
     }
 
   return (

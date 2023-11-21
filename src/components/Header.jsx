@@ -2,15 +2,24 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAbitsTrue, setFirstOtdelFalse, setFirstOtdelTrue, setSecondOtdelFalse, setSecondOtdelTrue, setThirdOtdelFalse, setThirdOtdelTrue } from './store/WindowStates';
 
-function Header({setVisible, setFirstOtdelenie, setSecondOtdelenie, setThirdOtdelenie}) {
+function Header() {
+
+  const dispatch = useDispatch()
+  
+  const closeOtdeleniya = () => {
+    dispatch(setFirstOtdelFalse())
+    dispatch(setSecondOtdelFalse())
+    dispatch(setThirdOtdelFalse())
+  }
+
   return (
       <Navbar expand="lg" variant='dark' bg='dark'>
         <Container>
           <Navbar.Brand onClick={() => {
-            setFirstOtdelenie(false)
-            setSecondOtdelenie(false)
-            setThirdOtdelenie(false)
+            closeOtdeleniya()
           }} style={{cursor: 'pointer'}}>УниКИТ</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -18,26 +27,21 @@ function Header({setVisible, setFirstOtdelenie, setSecondOtdelenie, setThirdOtde
               <Nav.Link href="https://www.mgkit.ru/">Официальный сайт</Nav.Link>
               <Nav.Link href="https://vk.com/s.bogomolov0">Кто делал</Nav.Link>
               <Nav.Link onClick={() => {
-                setVisible(true)
-                setFirstOtdelenie(false)
-                setSecondOtdelenie(false)
-                setThirdOtdelenie(false)
+                dispatch(setAbitsTrue())
+                closeOtdeleniya()
                 }}>Список поступающих</Nav.Link>
               <NavDropdown title="Отделения" id="dark-nav-dropdown" data-bs-theme="dark">
                 <NavDropdown.Item onClick={() => {
-                  setFirstOtdelenie(true)
-                  setSecondOtdelenie(false)
-                  setThirdOtdelenie(false)
+                  closeOtdeleniya()
+                  dispatch(setFirstOtdelTrue())
                 }}>Отделение 1</NavDropdown.Item>
                 <NavDropdown.Item onClick={() => {
-                  setSecondOtdelenie(true)
-                  setFirstOtdelenie(false)
-                  setThirdOtdelenie(false)
+                  closeOtdeleniya()
+                  dispatch(setSecondOtdelTrue())
                   }}>Отделение 2</NavDropdown.Item>
                 <NavDropdown.Item onClick={() => {
-                  setThirdOtdelenie(true)
-                  setFirstOtdelenie(false)
-                  setSecondOtdelenie(false)
+                  closeOtdeleniya()
+                  dispatch(setThirdOtdelTrue())
                   }}>Отделение 3</NavDropdown.Item>
               </NavDropdown>
             </Nav>

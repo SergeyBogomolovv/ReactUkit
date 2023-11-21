@@ -9,8 +9,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import NotFound from '../alert/alert'
+import { useDispatch } from 'react-redux'
+import { setTeachersFalse } from '../store/WindowStates'
 
-export default function Teachers({visible, setVisible}) {
+export default function Teachers() {
+    const dispatch = useDispatch()
+    // eslint-disable-next-line
     const [teachers, setTeachers] = useState([
         {name: "Вонючая Куропатка", img: "./pngs/teachers/kuropatka.png", subject: 'history', description: "Это какое то быдлятство! Прощупаваю"},
         {name: "Горошко Сергей Петрович", img: "./pngs/teachers/goroshek.png", subject: 'PE OBZ', description: "Гороховый монотонный чтец учебника"},
@@ -67,7 +71,7 @@ export default function Teachers({visible, setVisible}) {
                             {value: 'proger', name: 'Программирование'},
                             {value: 'physiks', name: 'Физика'},
                             ]} value={chooseSubject} onChange={sort => setChooseSubject(sort)} /> 
-                        <CloseButton variant='white' onClick={() => setVisible(false)} className={cl.closeBtn}/>
+                        <CloseButton variant='white' onClick={() => dispatch(setTeachersFalse())} className={cl.closeBtn}/>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -98,7 +102,7 @@ export default function Teachers({visible, setVisible}) {
                             {value: 'proger', name: 'Программирование'},
                             {value: 'physiks', name: 'Физика'},
                             ]} value={chooseSubject} onChange={sort => setChooseSubject(sort)} /> 
-                        <CloseButton variant='white' onClick={() => setVisible(false)} className={cl.closeBtn}/>
+                        <CloseButton variant='white' onClick={() => dispatch(setTeachersFalse())} className={cl.closeBtn}/>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -107,7 +111,7 @@ export default function Teachers({visible, setVisible}) {
                 <TransitionGroup className={cl.contentContainer}>
                     {SearchedBySubjectTeachers.map(teachers => 
                     <CSSTransition key={teachers.name} timeout={500} classNames='card' mountOnEnter unmountOnExit>
-                        <TeachersCard array={teachers} key={teachers.name} visible={visible} className='card'/>
+                        <TeachersCard array={teachers} key={teachers.name} className='card'/>
                     </CSSTransition>
                     )}
                 </TransitionGroup>

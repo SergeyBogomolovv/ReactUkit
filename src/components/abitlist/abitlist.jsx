@@ -6,7 +6,7 @@ import { useMemo } from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import NotFound from '../alert/alert'
 
-export default function Abitlist({visible, setVisible, abiturients}) {
+export default function Abitlist({abiturients}) {
 
     abiturients.sort((a,b) => a.ball - b.ball)
     abiturients.reverse()
@@ -20,7 +20,7 @@ export default function Abitlist({visible, setVisible, abiturients}) {
 
     if (SearchedAbiturients.length === 0) {
       return(<>
-              <AbitHeader setVisible={setVisible} search={searchAbit} setSearch={setSearchAbit}/>
+              <AbitHeader search={searchAbit} setSearch={setSearchAbit}/>
               <NotFound heading='Извините, абитуриенты не найдены' text='Проблема может быть в том, что вы не правильно ввели имя, такого абитуриента не существует, или в наш колледж еще никто не подал документы'/>
              </>
     ) 
@@ -28,7 +28,7 @@ export default function Abitlist({visible, setVisible, abiturients}) {
 
     return (
       <>
-        <AbitHeader setVisible={setVisible} search={searchAbit} setSearch={setSearchAbit}/>
+        <AbitHeader search={searchAbit} setSearch={setSearchAbit}/>
         <TransitionGroup className={cl.contentContainer}>
           {SearchedAbiturients.map(abit => 
           <CSSTransition key={abit.name} timeout={500} classNames='card' mountOnEnter unmountOnExit>
