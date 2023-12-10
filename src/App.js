@@ -30,7 +30,6 @@ function App() {
     } else {
       abiturients = (JSON.parse(localStorage.getItem('abits')))
     }
-
     const teachers = useSelector(state => state.teachers.state)
     const Abits = useSelector(state => state.abits.state)
     const group108 = useSelector(state => state.group108.state)
@@ -48,7 +47,7 @@ function App() {
 
     if (Abits) {
       return (
-        <Abitlist abiturients={abiturients}/>
+        <Abitlist/>
       )
     }
 

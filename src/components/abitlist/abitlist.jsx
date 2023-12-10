@@ -6,9 +6,11 @@ import { useMemo } from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import NotFound from '../alert/alert'
 
-export default function Abitlist({abiturients}) {
+export default function Abitlist({}) {
+    const abiturients = JSON.parse(localStorage.getItem('abits'))
     abiturients.sort((a,b) => a.ball - b.ball)
     abiturients.reverse()
+    
 
     const [searchAbit, setSearchAbit] = useState('')
 

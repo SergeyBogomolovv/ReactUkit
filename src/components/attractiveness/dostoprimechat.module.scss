@@ -28,7 +28,8 @@
         @include mobileContentContainer(1fr);
     }
     .img {
-        max-height: 100vw;
+        height: auto;
+        max-height: auto;
     }
     .text { 
         font-size: $MobilelotOfTxt;
