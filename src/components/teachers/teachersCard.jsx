@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group'
 
 export default function TeachersCard({array, className}) {
   return (
-      <Card bg='dark' text='white' border='secondary' className={[cl.Card, className].join(' ')}>
+      <Card bg='dark' text='white' border='secondary' className={[cl.Card, className,'siteImage'].join(' ')}>
         <Card.Img variant="top" src={array.img} />
         <Card.Body>
           <Card.Title>{array.name}</Card.Title>

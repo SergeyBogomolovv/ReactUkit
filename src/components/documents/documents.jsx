@@ -25,7 +25,8 @@ function Documents({abiturients, setAbiturients}) {
         alert('Ошибка, проверьте данные')
 
       } else {
-        setAbiturients([...abiturients, {name: nameValue, email: mailValue, ball: ballValue, input: inputValue}])
+        localStorage.setItem('abits', JSON.stringify([...abiturients, {name: nameValue, email: mailValue, ball: ballValue, input: inputValue}]))
+        setAbiturients(JSON.parse(localStorage.getItem('abits')))
         setNameValue('')
         setMailValue('')
         setBallValue('')

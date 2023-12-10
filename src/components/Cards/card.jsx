@@ -5,7 +5,7 @@ import { Transition } from 'react-transition-group';
 
 function BasicExample(props) {
   return (
-    <Card bg='dark' text='white' border='dark' className={cl.CardCon}>
+    <Card bg='dark' text='white' border='dark' className={[cl.CardCon, 'siteImage'].join(' ')}>
       <Card.Img variant="top" src={props.title} className={cl.cardIMG}/>
       <Card.Body>
         <Card.Title className={cl.CardTitle}>{props.name}</Card.Title>

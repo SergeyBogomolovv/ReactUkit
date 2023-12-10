@@ -7,7 +7,7 @@ export default function Otdeleniecontent({number, image, name, phone, email}) {
     <>
       <div className={cl.heading}>Отделение {number}</div>
         <div className={cl.content}>
-          <Image src={image} rounded className={cl.image}/>
+          <Image src={image} rounded className={[cl.image, 'siteImage'].join(' ')}/>
           <div className={cl.Name}>{name}</div>
           <div className={[cl.text, cl.email].join(' ')}>Эл. почта: {email}</div>
           <div className={[cl.text, cl.phone].join(' ')}>Телефон: {phone}</div>

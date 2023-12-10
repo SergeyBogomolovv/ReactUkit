@@ -21,7 +21,15 @@ import { setGroup108True, setGroup306True, setGroup309True, setModalDocsTrue, se
 
 function App() {
     const dispatch = useDispatch()
-    const [abiturients, setAbiturients] = useState([])
+    
+    const [abiturientss, setAbiturients] = useState([])
+
+    let abiturients
+    if (localStorage.getItem('abits') == null) {
+      localStorage.setItem('abits', JSON.stringify(abiturientss))
+    } else {
+      abiturients = (JSON.parse(localStorage.getItem('abits')))
+    }
 
     const teachers = useSelector(state => state.teachers.state)
     const Abits = useSelector(state => state.abits.state)

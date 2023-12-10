@@ -7,7 +7,6 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import NotFound from '../alert/alert'
 
 export default function Abitlist({abiturients}) {
-
     abiturients.sort((a,b) => a.ball - b.ball)
     abiturients.reverse()
 
@@ -17,7 +16,6 @@ export default function Abitlist({abiturients}) {
       return abiturients.filter(abit => abit.name.includes(searchAbit))
     }, [searchAbit, abiturients])
     
-
     if (SearchedAbiturients.length === 0) {
       return(<>
               <AbitHeader search={searchAbit} setSearch={setSearchAbit}/>

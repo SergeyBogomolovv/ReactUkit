@@ -55,7 +55,7 @@ export default function List108() {
       <TransitionGroup className={cl.contentContainer}>
         {SearchedPupils.map(pupil =>
         <CSSTransition key={pupil.id} timeout={500} classNames='card' mountOnEnter unmountOnExit>
-          <ListPerson key={pupil.id} className='card'>{pupil.id}. {pupil.name} <img src={pupil.src} className={cl.listimage}/></ListPerson>
+          <ListPerson key={pupil.id} className='card'>{pupil.id}. {pupil.name} <img src={pupil.src} className={[cl.listimage, 'siteImage'].join(' ')}/></ListPerson>
         </CSSTransition>
             )}
       </TransitionGroup>

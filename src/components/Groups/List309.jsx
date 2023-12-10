@@ -14,7 +14,7 @@ export default function List309({setVisible}) {
   const [searchPupil, setSearchPupil] = useState('') //Аналог searchQuery
 
   const SearchedPupils = useMemo(() => {
-    return pupil.filter(post => post.name.toLowerCase().includes(searchPupil))
+    return pupil.filter(post => post.name.includes(searchPupil))
   }, [searchPupil, pupil])
 
   const callBack = e => setSearchPupil(e.target.value)
@@ -33,7 +33,7 @@ export default function List309({setVisible}) {
       <GroupTitle title='309' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
       <div className={cl.contentContainer}>
         {SearchedPupils.map(pupil =>
-          <ListPerson key={pupil.id}>{pupil.id}. {pupil.name} <img src={pupil.src} className={cl.listimage}/></ListPerson>
+          <ListPerson key={pupil.id}>{pupil.id}. {pupil.name} <img src={pupil.src} className={[cl.listimage, 'siteImage'].join(' ')}/></ListPerson>
           )}
       </div>
       

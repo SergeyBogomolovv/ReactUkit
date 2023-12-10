@@ -33,7 +33,7 @@ export default function List306({setVisible}) {
       <GroupTitle title='306' setVisible={setVisible} searchPupil={searchPupil} callBack={callBack}/>
       <div className={cl.contentContainer}>
         {SearchedPupils.map(pupils =>
-          <ListPerson key={pupils.id} >{pupils.id}. {pupils.name} <img src={pupils.src} className={cl.listimage}/></ListPerson>
+          <ListPerson key={pupils.id} >{pupils.id}. {pupils.name} <img src={pupils.src} className={[cl.listimage, 'siteImage'].join(' ')}/></ListPerson>
           )}
       </div>
       

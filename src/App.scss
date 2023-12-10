@@ -10,6 +10,9 @@ body {
     background-color: $bgColor;
     color: #fff;
 }
+.siteImage {
+    animation: skeletonImg 1s linear infinite alternate;
+}
 
 .card-enter-active {
     animation: showCard 0.6s forwards;
@@ -24,7 +27,14 @@ body {
 .attractive-exit-active {
     animation: showAttractive 0.6s reverse;
 }
-
+@keyframes showAttractive {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 @keyframes showCard {
     0%{
         opacity: 0;
@@ -35,11 +45,12 @@ body {
         transform: translateY(0px);
     }
 }
-@keyframes showAttractive {
-    0%{
-        opacity: 0;
+
+@keyframes skeletonImg {
+    0% {
+        background-color: hsl(200, 5%, 45%);
     }
-    100%{
-        opacity: 1;
+    100% {
+        background-color: hsl(203, 10%, 74%);
     }
 }
