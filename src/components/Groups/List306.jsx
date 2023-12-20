@@ -8,8 +8,7 @@ import NotFound from '../alert/alert'
 export default function List306({setVisible}) {
   const [pupil, setPupil] = useState([
     {id: 1, name: 'Тимчик', src: './pngs/TIMCHICK.png'},
-    {id: 2, name: 'Вонючий', src: './pngs/TIMCHICK.png'},
-    {id: 3, name: 'Геракс', src: './pngs/Grekich.png'}
+    {id: 2, name: 'Геракс', src: './pngs/Grekich.png'}
   ])
   const [searchPupil, setSearchPupil] = useState('') //Аналог searchQuery
 
